@@ -1,0 +1,21 @@
+/**
+The base directory includes common styles and variables to be used across the
+entire website, layout and typography styles for example.
+**/
+
+body
+{
+  color: #3B3A36;
+  min-height: 100%;
+  padding: 0;
+  margin:0;
+  background-color: #F6F6F6;
+  background-size: cover;
+  text-align:center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1
+{
+  text-transform: uppercase;
+}

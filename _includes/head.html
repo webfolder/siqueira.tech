@@ -1,0 +1,17 @@
+<head>
+  <!-- Original
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/base/basic.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/modules/menu.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/modules/content.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/modules/image_section.css">
+  {% if page.title %}
+    <title>{{ page.title | markdownify | strip_html | strip_newlines | escape_once }} &#8211; {{ site.title }}</title>
+  {% else %}
+    <title>{{ site.title }}</title>
+  {% endif %}
+</head>

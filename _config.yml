@@ -1,0 +1,58 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Siqueira
+email: rodrigosiqueiramelo@gmail.com
+description: This website has the intention to work as a logbook of my long
+  journey into the Operating Systems (OS) studies. Here, I describe technical
+  and non-technical (rarely) things related to OS. Keep in mind, that I made
+  this logbook for me.
+url: https://siqueira.xyz
+logo: logo.png
+locale: en_US
+timezone: America/Sao_Paulo
+permalink: pretty
+
+# Jekyll
+permalink:          /:categories/:title/
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+
+collections:
+  tutorial:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: tutorial
+    values:
+      layout: tutorial
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+
+# Exclude list
+include: [_pages]
+exclude: [README.md, Gemfile, Gemfile.lock, _site, src, vendor, CNAME, LICENSE, Rakefile, .sass-cache, .DS_Store]

@@ -1,0 +1,109 @@
+/**
+Modules directory includes styles for different sections of a page, which are
+etermined by business needs.
+**/
+
+.menu-header > ul
+{
+  margin: 0px;
+  position: relative;
+  background-color: white;
+  list-style-type: none;
+  border-bottom-style: solid;
+  border-color: #E3E0CF;
+  border-width: 2px;
+  text-align: center;
+}
+
+.menu-header li
+{
+  display: inline-block;
+  float: center;
+  margin-right: 1px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+.menu-header li a
+{
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #3B3A36;
+}
+
+.menu-header li:hover a
+{
+  color: #9FA8A3;
+  border-top: solid;
+  border-width: 3px;
+}
+
+/** Handling responsiveness **/
+.show-menu
+{
+  display: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: #FFF;
+  background: #C5D5CB;
+  padding: 5px 0;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]
+{
+  display: none;
+  -webkit-appearance: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu
+{
+    display: block;
+}
+
+@media screen and (max-width : 760px)
+{
+  /*Make dropdown links appear inline*/
+  .menu-header ul
+  {
+    position: static;
+    display: none;
+  }
+  /*Create vertical spacing*/
+  .menu-header li
+  {
+    margin-bottom: 1px;
+  }
+  /*Make all menu links full width*/
+  .menu-header ul li, li a
+  {
+    width: 100%;
+  }
+
+  .menu-header ul li img
+  {
+    display: none;
+  }
+
+  /*Display 'show menu' link*/
+  .show-menu
+  {
+    display: block;
+  }
+
+  .menu-header li:hover a
+  {
+    color: #9FA8A3;
+    border-top: solid;
+    border-width: 3px;
+  }
+
+}
