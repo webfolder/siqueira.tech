@@ -2,23 +2,32 @@
 permalink: /categories/
 ---
 
+<!DOCTYPE html>
 <html>
 {% include head.html %}
+  <body>
 
-    <div class="content-box">
-      <h1> Tutorials </h1>
+  {% include top-header.html %}
+
         <div class="image-section">
           <a href="{{ site.url }}/kernel_list">
             <img src="{{ site.url }}/images/icons/linux.png" width="300" height="200">
           </a>
-          <div class="description">Linux</div>
+          <div class="description">Linux Kernel</div>
         </div>
 
       <div class="image-section">
         <a href="{{ site.url }}/linux_list">
           <img src="{{ site.url }}/images/icons/code.png" width="300" height="200">
         </a>
-        <div class="description">Code</div>
+        <div class="description">Debian</div>
+      </div>
+
+      <div class="image-section">
+        <a href="{{ site.url }}/linux_list">
+          <img src="{{ site.url }}/images/icons/code.png" width="300" height="200">
+        </a>
+        <div class="description">Useful Things</div>
       </div>
     </div>
 

@@ -2,8 +2,12 @@
 permalink: /categories/
 ---
 
+<!DOCTYPE html>
 <html>
-  <H1> KERNEL </H2>
+{% include head.html %}
+  <body>
+
+  {% include top-header.html %}
 
     <div class="content-box">
       <h1> Tutorials </h1>
@@ -19,6 +23,14 @@ permalink: /categories/
           <img src="{{ site.url }}/images/icons/code.png" width="300" height="200">
         </a>
         <div class="description">IIO</div>
+      </div>
+    </div>
+
+      <div class="image-section">
+        <a href="{{ site.url }}/kernel_iio">
+          <img src="{{ site.url }}/images/icons/code.png" width="300" height="200">
+        </a>
+        <div class="description">Core</div>
       </div>
     </div>
 
