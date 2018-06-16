@@ -35,7 +35,9 @@ kramdown:
   entity_output:    as_char
   toc_levels:       1..6
   enable_coderay:   false
-
+sass:
+  sass_dir:         assets/_sass
+  style:            compressed
 collections:
   tutorial:
     output: true
