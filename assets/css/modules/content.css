@@ -1,6 +1,6 @@
 h1
 {
-  text-align: left;
+  text-align: center;
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #C5D5CB;
@@ -32,13 +32,24 @@ p::first-letter
 .content-box
 {
   position: relative;
-  top: 10px;
-  margin: 20px;
+  top: 5%;
+  margin: 5%;
   bottom: 10px;
   background: white;
   font-size: 15px;
   text-align: left;
 }
+
+.list-content-box
+{
+  bottom: 10px;
+  background: white;
+  font-size: 15px;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 
 .half-content-box
 {
@@ -76,6 +87,19 @@ p::first-letter
 {
   margin-left: auto;
   margin-right: auto;
+}
+
+.content-box > ul
+{
+  list-style-type: none;
+  text-align: center;
+}
+
+.content-box li:hover a
+{
+  color: #9FA8A3;
+  border-top: solid;
+  border-width: 3px;
 }
 
 /** Handling responsiveness **/

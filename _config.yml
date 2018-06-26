@@ -46,9 +46,9 @@ defaults:
   -
     scope:
       path: ""
-      type: tutorial
+      type: development
     values:
-      layout: tutorial
+      layout: development
 # Gems
 plugins:
   - jekyll-feed
