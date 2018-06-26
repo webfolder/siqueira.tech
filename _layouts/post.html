@@ -12,12 +12,26 @@
 
     <div class="inner-post content">
 
-    {% include share.html %}
+      <div align="center">
+        {% include share.html %}
+      </div>
 
-      <div class="date-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}&#x2756;{% endif %}</div>
-      {{ content }}
+      <div class="date-highlight">
+        {% if page.date %}
+          {{ page.date | date: '%d %b %Y' }}
+        {% else %}
+          &#x2756;
+        {% endif %}
+      </div>
+
+        {{ content }}
+
       <br>
-      {% include share.html %}
+
+      <div align="center">
+        {% include share.html %}
+      </div>
+
     </div>
 
     {% include scripts.html %}

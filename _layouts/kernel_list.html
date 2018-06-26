@@ -7,32 +7,31 @@ permalink: /categories/
 {% include head.html %}
   <body>
 
-  {% include top-header.html %}
+    {% include top-header.html %}
 
-  <h1> Kernel </h1>
+    <h1>Kernel Areas</h1>
 
-  <div class="content-box">
+    <div class=list-content-box>
+      <div class="image-section">
+        <a href="{{ site.url }}/kernel_drm">
+          <img src="{{ site.url }}/images/icons/linux_a2c.png" width="300" height="200">
+        </a>
+        <div class="description">DRM</div>
+      </div>
 
-    <div class="image-section">
-      <a href="{{ site.url }}/kernel_drm">
-        <img src="{{ site.url }}/images/icons/linux.png" width="300" height="200">
-      </a>
-      <div class="description">DRM</div>
+      <div class="image-section">
+        <a href="{{ site.url }}/kernel_iio">
+          <img src="{{ site.url }}/images/icons/linux_a2c.png" width="300" height="200">
+        </a>
+        <div class="description">IIO</div>
+      </div>
+
+      <div class="image-section">
+        <a href="{{ site.url }}/kernel_core">
+          <img src="{{ site.url }}/images/icons/linux_a2c.png" width="300" height="200">
+        </a>
+        <div class="description">Core</div>
+      </div>
     </div>
-
-    <div class="image-section">
-      <a href="{{ site.url }}/kernel_iio">
-        <img src="{{ site.url }}/images/icons/code.png" width="300" height="200">
-      </a>
-      <div class="description">IIO</div>
-    </div>
-
-    <div class="image-section">
-      <a href="{{ site.url }}/kernel_iio">
-        <img src="{{ site.url }}/images/icons/code.png" width="300" height="200">
-      </a>
-      <div class="description">Core</div>
-    </div>
-  </div>
-
+  </body>
 </html>
