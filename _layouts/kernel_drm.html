@@ -6,19 +6,27 @@ permalink: /categories/
 
   <body>
   {% include top-header.html %}
+    <div class="content">
+      <h1> DRM </h1>
+      <hr>
 
-  <H1> DRM </H2>
-
-    {% for post in site.posts %}
-      {% if post.categories contains 'drm' %}
-          <h2>
-              <a href="{{ site.url }}{{ post.url }}" class="post-title">
-              <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-            </a>
-            <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
-          </h2>
-      {% endif %}
-    {% endfor %}
-
+      <div class="content">
+        <ul class="posts-list">
+          {% for post in site.posts %}
+            {% if post.categories contains 'drm' %}
+              <li>
+                <h2>
+                    <a href="{{ site.url }}{{ post.url }}" class="post-title">
+                    <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+                  </a>
+                  <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
+                </h2>
+                <p>{{ post.excerpt | strip_html | truncatewords:10 }}</p>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
