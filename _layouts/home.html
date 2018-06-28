@@ -3,23 +3,27 @@
 
 <!DOCTYPE html>
 <html>
+
 {% include head.html %}
+
   <body>
 
   {% include top-header.html %}
 
-    <p class="notice_warning">
-      <strong>Notice:
-        The opinions expressed on this site are mine alone and do not
-        necessarily reflect the opinions or strategies of any organization
-        that I am related on.
-      </strong>
-    </p>
+    <div class="list-content-box">
 
-    <div class="content-box">
-      <h1>Recent Posts</h1>
+      <p class="notice_warning">
+        <strong>Notice:
+          The opinions expressed on this site are mine alone and do not
+          necessarily reflect the opinions or strategies of any organization
+          that I am related on.
+        </strong>
+      </p>
+
+      <h2>Recent Posts</h2>
+      <hr>
         <ul class="posts-list">
-            {% for post in site.posts limit:2 %}
+            {% for post in site.posts limit:3 %}
             <li>
               <h2>
                 <a href="{{ site.url }}{{ post.url }}" class="post-title">
@@ -27,26 +31,10 @@
                 </a>
                 <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
               </h2>
-              <p>{{ post.excerpt | strip_html | truncatewords:10 }}</p>
               </li>
             {% endfor %}
         </ul>
-
-      <h1>Latest Post</h1>
-        <ul class="posts-list">
-          {% for post in site.posts offset:3 limit:3 %}
-              <li>
-                <h2>
-                  <a href="{{ site.url }}{{ post.url }}" class="post-title">
-                    <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-                  </a>
-                  <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
-                </h2>
-                <p>{{ post.excerpt | strip_html | truncatewords:10 }}</p>
-                </li>
-          {% endfor %}
-        </ul>
-      </div>
+    </div>
 
   </body>
 </html>

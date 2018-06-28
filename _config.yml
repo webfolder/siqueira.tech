@@ -15,10 +15,6 @@
 # in the templates via {{ site.myvariable }}.
 title: Siqueira
 email: rodrigosiqueiramelo@gmail.com
-description: This website has the intention to work as a logbook of my long
-  journey into the Operating Systems (OS) studies. Here, I describe technical
-  and non-technical (rarely) things related to OS. Keep in mind, that I made
-  this logbook for me.
 url: https://siqueira.xyz
 logo: logo.png
 locale: en_US

@@ -42,6 +42,11 @@ etermined by business needs.
   border-width: 3px;
 }
 
+.menu-header li:hover a#home_logo
+{
+  border-top: none;
+}
+
 /** Handling responsiveness **/
 .show-menu
 {
