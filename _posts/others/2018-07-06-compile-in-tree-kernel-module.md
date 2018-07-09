@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Compile In-tree Kernel Module"
-date:   2017-02-26
+date:   2018-07-06
 published: true
-categories: drm
+categories: kernel_others
 ---
 
 [//]: <> (TODO: REVISAR)
