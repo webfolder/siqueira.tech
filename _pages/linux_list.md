@@ -1,6 +1,6 @@
 ---
-layout: under_construction
 title: Linux
+layout: under_construction
 description: "Linux"
-permalink: /linux_list.html
+permalink: /linux_list/
 ---

@@ -1,5 +1,5 @@
 ---
 title: Miscellaneous
-permalink: /miscellaneous/
 layout: under_construction
+permalink: /miscellaneous/
 ---

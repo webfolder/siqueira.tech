@@ -1,6 +1,6 @@
 ---
-layout: kernel_drm
 title: DRM
+layout: kernel_drm
 description: "DRM"
-permalink: /kernel_drm.html
+permalink: /kernel_drm/
 ---

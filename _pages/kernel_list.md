@@ -1,6 +1,6 @@
 ---
-layout: kernel_list
 title: Kernel
+layout: kernel_list
 description: "Kernel"
-permalink: /kernel_list.html
+permalink: /kernel_list/
 ---
