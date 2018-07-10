@@ -2,7 +2,7 @@
 layout: post
 title:  "Compile In-tree Kernel Module"
 date:   2018-07-06
-published: true
+published: false
 categories: kernel_others
 ---
 

@@ -4,3 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
+
+**Notice:**
+The opinions expressed on this site are mine alone and do not necessarily
+reflect the opinions or strategies of any organization that I am related on.
+{: .notice_warning}
