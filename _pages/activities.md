@@ -1,5 +1,5 @@
 ---
 title: Activities
-layout: under_construction
+layout: activities
 permalink: /activities/
 ---
