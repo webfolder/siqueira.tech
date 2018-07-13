@@ -1,0 +1,7 @@
+{% capture fig_img %}
+![foo]({{ site.url }}/images/{{ include.path }})
+{% endcapture %}
+<figure>
+  {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
+  <figcaption> {{ include.caption  }} </figcaption>
+</figure>
