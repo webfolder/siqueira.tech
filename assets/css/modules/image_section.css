@@ -28,8 +28,6 @@
 }
 
 .image-text-wrapper {
-  font-size: large;
-  color: #000000;
   padding: 10px;
   max-width: 80%;
   margin: 0 auto;
@@ -41,7 +39,8 @@
     overflow: auto
 }
 .post-thumb {
-    float: left
+    float: left;
+    padding: 5%
 }
 
 .post-thumb img {

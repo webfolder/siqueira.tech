@@ -10,38 +10,41 @@
 
   {% include top-header.html %}
 
-  <div class="image-text-wrapper">
+  <div class="inner-post content">
 
-    <div class="post-thumb">
-      <img src="{{ site.url }}/images/me.png" />
+    <div class="image-text-wrapper">
+      <div class="post-thumb">
+        <img src="{{ site.url }}/images/me.png" />
+      </div>
+        {{ content }}
     </div>
-    <div class="post-content">
-      {{ content }}
+
+  </div>
+
+  <div class=list-content-box>
+    <div class="image-section">
+      <a href="{{ site.url }}/about/#">
+        <img src="{{ site.url }}/images/icons/cv_a2c.png" width="150" height="150">
+      </a>
+      <div class="description">CV</div>
     </div>
 
-    <div class=list-content-box>
-      <div class="image-section">
-        <a href="{{ site.url }}/kernel_drm">
-          <img src="{{ site.url }}/images/icons/calendar_a2c.png" width="150" height="150">
-        </a>
-        <div class="description">CV</div>
-      </div>
+    <div class="image-section">
+      <a href="{{ site.url }}/about/#">
+        <img src="{{ site.url }}/images/icons/publications_a2c.png" width="150" height="150">
+      </a>
+      <div class="description">Publications</div>
+    </div>
 
-      <div class="image-section">
-        <a href="{{ site.url }}/kernel_iio">
+    <div class="image-section">
+      <a href="{{ site.url }}/public_agenda">
           <img src="{{ site.url }}/images/icons/calendar_a2c.png" width="150" height="150">
-        </a>
-        <div class="description">Publications</div>
-      </div>
-
-      <div class="image-section">
-        <a href="{{ site.url }}/public_agenda">
-            <img src="{{ site.url }}/images/icons/calendar_a2c.png" width="150" height="150">
-        </a>
-        <div class="description">Public Agenda</div>
-      </div>
+      </a>
+      <div class="description">Public Agenda</div>
     </div>
   </div>
 
+    {% include scripts.html %}
+    {% include overlay.html %}
   </body>
 </html>

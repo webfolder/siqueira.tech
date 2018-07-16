@@ -10,20 +10,23 @@
 
   {% include top-header.html %}
 
-    <div class="content">
-
-    <h1>Public Calendar</h1>
-    <hr>
-
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=m2c7rbvc187ab19b8qhiiiasa0%40group.calendar.google.com&ctz=America%2FSao_Paulo"
-        style="margin-left: auto ;   margin-right: auto ;"
-        width="800"
-        height="600"
-        frameborder="0"
-        scrolling="no"></iframe>
-
+    <div class="inner-post content">
+      <h2>Public Calendar</h2>
+      <hr>
+      <center>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=m2c7rbvc187ab19b8qhiiiasa0%40group.calendar.google.com&ctz=America%2FSao_Paulo"
+          width="800"
+          height="600"
+          frameborder="0"
+          align="center"
+          scrolling="no">
+        </iframe>
+      </center>
     </div>
+
+    {% include scripts.html %}
+    {% include overlay.html %}
 
   </body>
 </html>
