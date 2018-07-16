@@ -1,0 +1,47 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+  <body>
+
+  {% include top-header.html %}
+
+  <div class="image-text-wrapper">
+
+    <div class="post-thumb">
+      <img src="{{ site.url }}/images/me.png" />
+    </div>
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <div class=list-content-box>
+      <div class="image-section">
+        <a href="{{ site.url }}/kernel_drm">
+          <img src="{{ site.url }}/images/icons/calendar_a2c.png" width="150" height="150">
+        </a>
+        <div class="description">CV</div>
+      </div>
+
+      <div class="image-section">
+        <a href="{{ site.url }}/kernel_iio">
+          <img src="{{ site.url }}/images/icons/calendar_a2c.png" width="150" height="150">
+        </a>
+        <div class="description">Publications</div>
+      </div>
+
+      <div class="image-section">
+        <a href="{{ site.url }}/public_agenda">
+            <img src="{{ site.url }}/images/icons/calendar_a2c.png" width="150" height="150">
+        </a>
+        <div class="description">Public Agenda</div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+</html>
