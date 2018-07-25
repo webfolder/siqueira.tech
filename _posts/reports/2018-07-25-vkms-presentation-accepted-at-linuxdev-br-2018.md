@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Talk about VKMS accepted in linuxdev-br"
-date:   2018-07-13
+date:   2018-07-25
 categories: report
-published: false
+published: true
 ---
 
 {% include image-post.html
@@ -24,9 +24,7 @@ subsystem and finish with the explanation of the VKMS. I want to detail some of
 the features that I developed, and I will try to explain the features developed
 by Haneen. As soon as I have the presentation done, I will post it here.
 
-
 ## Reference
 
 1. [Linux Developer Conference Brazil](https://linuxdev-br.net/)
 2. [Linuxdev-br speakers](https://linuxdev-br.net/2018/07/07/here-are-our-speakers/)
-
