@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Siqueira
 email: rodrigosiqueiramelo@gmail.com
-url: http://siqueira.tech
+url: https://siqueira.tech
 logo: logo.png
 locale: en_US
 timezone: America/Sao_Paulo
