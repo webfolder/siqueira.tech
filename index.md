@@ -5,10 +5,16 @@
 layout: home
 ---
 
+
 **Notice:**
 The opinions expressed on this site are mine alone and do not necessarily
 reflect the opinions or strategies of any organization that I am related on.
 {: .notice_warning}
+
+<a href="{{ site.url }}/feed.xml">
+  <img src="{{ site.baseurl }}/images/icons/feed_a2c.png" style="float:left;padding:5px">
+    RSS Feed
+</a>
 
 ## About this logbook (site/blog)
 
