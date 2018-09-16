@@ -21,7 +21,6 @@ permalink: /categories/
                   </a>
                   <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
                 </h2>
-                <p>{{ post.excerpt | strip_html | truncatewords:10 }}</p>
               </li>
             {% endif %}
           {% endfor %}
