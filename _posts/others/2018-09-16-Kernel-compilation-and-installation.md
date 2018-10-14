@@ -2,7 +2,7 @@
 layout: post
 title:  "Kernel Compilation and Installation"
 date:   2018-09-16
-published: false
+published: true
 categories: kernel_others
 ---
 
@@ -10,7 +10,7 @@ categories: kernel_others
 
 Follows the command list employed in this tutorial:
 
-The `.config` manipulations:
+`.config` manipulations:
 
 ```bash
 zcat /proc/config.gz > .config
@@ -46,12 +46,12 @@ sudo make install
 Remove:
 
 ```bash
-rm -rf /boot/vmlinuz-[target]
-rm -rf /boot/initrd-[target]
-rm -rf /boot/System-map-[target]
-rm -rf /boot/config-[target]
-rm -rf /lib/modules/[target]
-rm -rf /var/lib/initramfs/[target]
+rm -rf /boot/vmlinuz-[TARGET]
+rm -rf /boot/initrd-[TARGET]
+rm -rf /boot/System-map-[TARGET]
+rm -rf /boot/config-[TARGET]
+rm -rf /lib/modules/[TARGET]
+rm -rf /var/lib/initramfs/[TARGET]
 ```
 ## Introduction
 
@@ -68,11 +68,12 @@ virtualization, desktop/laptop, and embedded devices. The virtualization
 technique is the safer way to conduct experiments with Linux kernel because any
 fatal mistake has a few consequences. For example, if you crash the whole
 system, you can create another virtual machine or take one of your backups
-(yes, make a backup of your kernel images). Experiments on the host machine
-(i.e., your computer) are more fun, but also riskier. Any potential problem
-could break all your system.  Lastly, for the embedded devices, you can make
-tests in a developing kit. For this tutorial, We decided to use the
-virtualization approach. 
+(yes, make a backup of your VMs). Experiments on the host machine (i.e., your
+computer) are more fun, but also riskier. Any potential problem could break all
+your system.  Lastly, for the embedded devices, you can make tests in a
+developing kit (e.g., raspberry pi). For this tutorial, we decided to use the
+virtualization approach.
+
 [//]: <> (TODO: Adicionar o post sobre QEMU no futuro )
 [//]: <> (TODO: é bom falar algo assim: "se vc está usando vm, execute os comandos indicados aqui dentro da sua máquina virtual" )
 
@@ -85,7 +86,7 @@ described here in the same fashion on your local machine.
 
 The Linux kernel has many subsystems, and most of them keep their Kernel
 instance. Usually, the maintainer(s) of each subsystem is responsible for
-receiving patches and decide about applying or refuse the change. Later, the
+receiving patches and decide about applying or refuse them. Later, the
 maintainer says to Torvalds which branch to merge. This explanation is an
 oversimplification of the process; you can find more details in the
 documentation [1]. It is important to realize that you have to figure out which
@@ -93,8 +94,8 @@ subsystem you intend to contribute, as well as its repository, and work based
 on their kernel instance. For example, if you want to contribute to RISC-V
 subsystem you have to work on Palmer Dabbelt repository; if you're going to
 contribute to IIO use Jonathan Cameron repository. You can quickly figure out
-the target branch by looking at the MAINTAINERS file. For this tutorial, we use
-the Torvalds repository. 
+the target branch by looking at the MAINTAINERS file. For this tutorial, we
+gonna use the Torvalds repository. 
 
 ```bash
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
@@ -107,9 +108,7 @@ want, but keep in mind that you may face some problems with non-official
 repositories. I always recommend for newcomers to use the git.kernel.org to get
 their Linux code and avoid problems.
 
-## The Super `.config` file
-
-[comment]: <> (Revisar daqui para baixo)
+## The Super `.config`
 
 The `.config` file holds all the information of what should be compiled or not
 during the build process. The `.config` file has three possible answers per
@@ -125,10 +124,10 @@ your computer may have several device drivers which you do not need.
 Nonetheless, the important thing here is: the more options you have enabled in
 the `.config` file, it takes more time to compile.
 
-If it is your first trying to use your own compiled kernel version, I strongly
-recommend you to use the `.config` provided by your operating system to raise
-your chances of success. Later, you can expand the modification as we describe
-in this tutorial.
+If this is your first trying to use your own compiled kernel version, I
+strongly recommend you to use the `.config` provided by your operating system
+to raise your chances of success. Later, you can expand the modification as we
+describe in this tutorial.
 
 **Attention:**
 The `.config` file has Superpowers, I recommend you to invest some time to
@@ -195,11 +194,16 @@ Navigate to the options and get comfortable with this menu.
 
 ### Final considerations about `.config` and tips
 
+**Attention:**
+Remember, all the commands explained in the section related to `.config` have
+to be executed inside the VM.
+{: .notice_danger}
+
 When you use a configuration file provided by a Distribution, hundreds of
 device drivers are enabled; typically, you need a few drivers. All the enabled
 drivers will raise the compilation time, and you don't want it; fortunately,
 there is an option that automatically changes the `.config` to enable only
-required drivers for your hardware. Nonetheless, before using the command, it
+required drivers for your hardware. Nonetheless, before using commands, it
 is highly recommended to enable all the devices that you use with your computer
 to ensure that the `.config`  have all the required driver for your machine
 activated. In other words, plug all the devices that you usually use before
@@ -211,20 +215,22 @@ make localmodconfig
 
 **Remember:**
 Before executing the `localmodconfig` target plug-in all the device that you
-usually use to get them enabled in the `.config`.
+usually use to get them enabled in the `.config`. However, this plug-in steps
+is only required if you are in your host machine; you do not need to care about
+this in your VM, just execute the command.
 {: .notice_info}
 
 This command uses `lsmod` with the goal to enables or disables devices drivers
 in the `.config` file.
 
-[//]: <> (TODO: Seria legal simular isso aqui)
+[//]: <> (TODO: Tirar um print das perguntas e adicionar aqui)
 
 Sometimes, when you rebase your local branch with the upstream and start the
-compilation, you some may notice interactive questions about regarding feature
-selection. This happens because during the evolution of the Kernel new features
-are added, and these new features were not present in your `.config` file. As a
-result, you are asked to take a decision. Sometimes, there is a way to reduce
-the amount of asked question with the command partially:
+compilation, you may notice interactive questions regarding new features. This
+happens because during the evolution of the Kernel new features are added, and
+these new features were not present in your `.config` file. As a result, you
+are asked to take a decision. Sometimes, there is a way to reduce the amount of
+asked question with the command:
 
 ```bash
 make olddefconfig
@@ -248,8 +254,7 @@ make -j [two_times_the_number_of_core]
 [//]: <> (TODO: Seria legal expandir a explicação do dobro dos cores)
 Just replace the `two_times_the_number_of_core` for the number of cores you have by two. For example, if you have 8 cores you should add 16.
 
-This command uses `lsmod` to check the enables or disables devices drivers in
-the `.config` file.
+As an alternative, you can specify the architecture:
 
 ```bash
 make ARCH=x86_64 -j [two_times_the_number_of_core]
@@ -261,26 +266,21 @@ For compiling the kernel modules, type:
 make modules_install
 ```
 
-## Compilation Outputs
+## Install your custom kernel
 
-[//]: <> (TODO: Seria legal expandir a explicação do dobro dos cores)
-
-## Install new your custom kernel
-
-It is important to pay attention in the installation order; we install modules
-as following:
+It is important to pay attention in the installation order:
 
 1. Install modules
 2. Install header
 3. Install Image
 4. Update bootloader (Grub)
 
-**Attention:**
-Double your attention in the install steps. You can crash your system because
-you have executed all commands as a root user.
-{: .notice_danger}
-
 ### Install modules and headers
+
+**Attention:**
+From now on, double your attention in the install steps. You can crash your
+system.
+{: .notice_danger}
 
 Just type:
 
@@ -299,9 +299,9 @@ sudo make headers_install INSTALL_HDR_PATH=/usr
 ### Debian based steps
 
 Finally, it is time to install your Kernel image. This step does not work on
-Arch Linux, see next section if you are interested in Arch.
+Arch Linux, see the next section if you are interested in Arch.
 
-To install the Kernel module just type:
+To install the Kernel modules just type:
 
 ```bash
 sudo make install
@@ -312,21 +312,21 @@ sudo make install
 If you use Arch Linux, we present the basics steps to install your custom
 image. You can find a detailed explanation of this processes in the Arch Linux [wiki](https://wiki.archlinux.org/index.php/Kernels/Traditional_compilation).
 
-First, you have copied your kernel image to the `/boot/` directory with the
-command: 
+First, you have to make a copy of your kernel image to the `/boot/` directory
+with the command: 
 
 ```bash
-sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-[name]
+sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-[NAME]
 ```
 
-Replace [name] by any name. It could be your name.
+Replace [NAME] by any name. It could be your name.
 
-Second, you have to create a new `mkinitcpio`. Follow the steps below:
+Second, you have to create a new `mkinitcpio` file. Follow the steps below:
 
 1. Copy an existing `mkinitcpio`
 
 ```bash
-sudo cp /etc/mkinitcpio.d/linux.present /etc/mkinitcpio.d/linux-[name].present
+sudo cp /etc/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux-[NAME].preset
 ```
 
 2. Open the copied file, look it line by line, replaces the old kernel
@@ -377,7 +377,12 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 So... If the first command fails, try the last one.
 
-Now, reboot your system and check if everything is ok.
+Now, reboot your system and check if everything is ok. You should see some options in your Grub as the Figure X illustrates.
+
+{% include image-post.html
+  path="posts/grub_vm.png"
+  caption="Grub menu options"%}
+
 
 ## Remove
 
