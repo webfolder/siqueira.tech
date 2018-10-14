@@ -9,13 +9,13 @@ categories: kernel_others
 ## Command summary
 
 ```bash
-qemu-img create -f qcow2 kernel_experiments 10G
+qemu-img create -f qcow2 [NAME] 10G
 
 qemu-system-x86_64 -cdrom ~/PATH/DISTRO_ISO.iso -boot order=d -drive \
-                file=kernel_experiments,format=qcow2 -m 2G
+                file=[NAME],format=qcow2 -m 2G
 
 qemu-system-x86_64 -enable-kvm -net nic -net user,hostfwd=tcp::2222-:22,smb=$PWD/ \
-                   -daemonize -m 4G -smp cores=4,cpus=4 kernel_experiments
+                   -daemonize -m 4G -smp cores=4,cpus=4 [NAME]
 ```
 
 **Info:**
@@ -26,17 +26,19 @@ to fix it.
 ## Introduction
 
 If you are curious about Linux Kernel development, but you feel afraid of
-accidentally break your system due to your experiments, the solution is simple:
-utilize a Virtual Machine (VM). In this tutorial, we will examine how to use
-QEMU, which is an extremely powerful hardware virtualization tool that can be
-used in many different contexts. I particularly appreciate QEMU because it is a
-very popular tool, it receives constant updates, it is a feature rich machine
-emulation, it is free software, and it was originally designed for development.
+accidentally break your system due to your experiments, the answer for your
+problems can be summarize in one technology: Virtual Machine (VM). In this
+tutorial, we will examine how to use QEMU, which is an extremely powerful
+hardware virtualization tool that can be used in many different contexts. I
+particularly appreciate QEMU because it is a very popular tool (as a result, it
+is easy to find information about it in the Internet), it receives constant
+updates, it is a feature rich machine emulation, it is free software, and it
+was originally designed for development.
 
 QEMU is a generic machine emulator based on dynamic translation [3] that can
 operate in two different modes [2]:
 
-* **Full system emulation**: A mode that completely emulates a computer which
+* **Full system emulation**: A mode that completely emulates a computer. It
   can be used to launch different Operating Systems (OS);
 * **User mode emulation**: Enables to launch a process for one sort of CPU on
   another CPU.
@@ -75,8 +77,8 @@ following command:
 qemu-img create -f qcow2 kernel_experiments 15G
 ```
 **Attention:**
-Do not copy and paste the command above or any other that you will find in this
-tutorial, try to understand it first.
+Do not copy and paste the command above or any other find in this tutorial, try
+to understand it first.
 {: .notice_warning}
 
 
@@ -94,9 +96,9 @@ For this tutorial, I recommend you to use qcow2 with 10 or 15G.
 
 ## Installing an Distro
 
-Next, download the Linux Distribution that you want to use in the QEMU VM (I
-always recommend Debian or ArchLinux). With your QEMU image and your distro
-ISO, proceed with the command below (remember to adapt it):
+Next, download the Linux Distribution that you want to use (I always recommend
+Debian or ArchLinux). With your QEMU image and your distro ISO, proceed with
+the command below (remember to adapt it):
 
 ```bash
 qemu-system-x86_64 -cdrom ~/PATH/TO/YOUR_DISTRO_ISO.iso -boot order=d -drive \
@@ -108,7 +110,7 @@ For simplicity sake, create a user in the VM that match with your host machine
 user.
 {: .notice_warning}
 
-Proceed with the installation.
+Proceed with the installation, and come back here after you finish.
 
 ## Start QEMU
 
@@ -143,9 +145,9 @@ You have a vast number of options for setting up your SSH; we provide a 1000
 foot view of the process.
 {: .notice_info}
 
-To improve your experience working with your QEMU VM, it is a good idea to set
-up the ssh. First, you need to create a key pair on your machine (if you do not
-have it yet) with the command:
+To improve your experience with VM, it is a good idea to set up the ssh. First,
+you need to create a key pair on your machine (if you do not have it yet) with
+the command:
 
 ```
 ssh-keygen -t rsa
