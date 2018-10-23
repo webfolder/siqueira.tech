@@ -25,14 +25,14 @@ to fix it.
 
 ## Introduction
 
-If you are curious about Linux Kernel development, but you feel afraid of
-accidentally break your system due to your experiments, the answer for your
-problems can be summarize in one technology: Virtual Machine (VM). In this
-tutorial, we will examine how to use QEMU, which is an extremely powerful
+If you are curious about Linux Kernel development, but feel afraid of
+accidentally breaking your system due to experiments, the answer for such
+problems can be summarized in one technology: Virtual Machine (VM). In this
+tutorial, we'll examine how to use QEMU, which is an extremely powerful
 hardware virtualization tool that can be used in many different contexts. I
-particularly appreciate QEMU because it is a very popular tool (as a result, it
-is easy to find information about it in the Internet), it receives constant
-updates, it is a feature rich machine emulation, it is free software, and it
+particularly appreciate QEMU because it's a very popular tool (thus easy to 
+find information about it on the Internet), it's updated constantly,
+it features rich machine emulation, it's free software, and it
 was originally designed for development.
 
 QEMU is a generic machine emulator based on dynamic translation [3] that can
@@ -40,13 +40,13 @@ operate in two different modes [2]:
 
 * **Full system emulation**: A mode that completely emulates a computer. It
   can be used to launch different Operating Systems (OS);
-* **User mode emulation**: Enables to launch a process for one sort of CPU on
+* **User mode emulation**: Enables launching a process for one sort of CPU on
   another CPU.
 
-If you have recent `x86` machine, you can use QEMU with KVM and achieve high
+If you have an `x86` machine, you can use QEMU with KVM and achieve high
 performance.
 
-## Prerequisites: Install QEMU and KVM
+## Prerequisites: Installing QEMU and KVM
 
 To follow this tutorial you need to install QEMU and Samba Client (for sharing
 between your host and guest).
@@ -67,9 +67,9 @@ Install Debian packages [2]:
 sudo apt install qemu samba samba-client
 ```
 
-## Create an image
+## Creating an image
 
-We want QEMU running a Linux Distribution for our future experiments with
+We want QEMU running a Linux distribution for our future experiments with
 Linux. With this goal in mind, we have to create an image disk with the
 following command:
 
@@ -77,28 +77,33 @@ following command:
 qemu-img create -f qcow2 kernel_experiments 15G
 ```
 **Attention:**
-Do not copy and paste the command above or any other find in this tutorial, try
-to understand it first.
+Don't just simply copy and paste the command above or any other found in this tutorial, try
+to understand it thoroughly, by reading it dissected below.
 {: .notice_warning}
 
 
-* `qemu-img`: It is the disk image utility provided by QEMU;
-  * `create`: Indicate that we want to create new QEMU disk image;
-  * `-f format`: Specifies the image format; usually, you want 'raw' or
+* `qemu-img`: It's the disk image utility provided by QEMU;
+  * `create`: Indicates that we want to create new QEMU disk image;
+  * `-f qcow2`: Specifies the image format; usually, you want 'raw' or
     'qcow2'. Raw images are fast, but it uses all the determined size at once;
     on the other hand, qcow2 is a little bit slower, but it increases the image
-    size based on the VM usage;
-  * `filename`: The create command expects a filename for the new image. Here,
-    we decided by kernel_experiments;
-  * `size`: The image size, we decided by 15G.
+    size based on VM usage;
+  * `kernel_experiments`: This could be anything, really. It's just the output file name QEMU will store the generated image;
+  * `15G`: The image size.
 
-For this tutorial, I recommend you to use qcow2 with 10 or 15G.
+In this tutorial, I recommend using qcow2 with 10 or 15G.
 
-## Installing an Distro
+Check that the command before succedded by typing:
+```bash
+file kernel_experiments
+```
 
-Next, download the Linux Distribution that you want to use (I always recommend
-Debian or ArchLinux). With your QEMU image and your distro ISO, proceed with
-the command below (remember to adapt it):
+The output should be something similar to `kernel_experiments: QEMU QCOW Image (v3), 16106127360 bytes`
+
+## Installing a distro
+
+Next, download any Linux distribution image you want to use (I recommend
+Debian or ArchLinux, but it can be any). With your QEMU image file created above and your distro's ISO, follow the command below:
 
 ```bash
 qemu-system-x86_64 -cdrom ~/PATH/TO/YOUR_DISTRO_ISO.iso -boot order=d -drive \
@@ -106,13 +111,13 @@ qemu-system-x86_64 -cdrom ~/PATH/TO/YOUR_DISTRO_ISO.iso -boot order=d -drive \
 ```
 
 **Notice:**
-For simplicity sake, create a user in the VM that match with your host machine
-user.
+The command above will start up a VM and mount the ISO file you've downloaded on it. After installation has finished, it'll reboot the VM automatically, just close the window after it finished installing.
 {: .notice_warning}
 
-Proceed with the installation, and come back here after you finish.
+Proceed with the installation, and come back here after you finish. For the sake of simplicity, create a user in the VM that match with your host machine
+user.
 
-## Start QEMU
+## Booting up a QEMU VM
 
 Finally, it is time to start the machine. Take a look at the command below and
 adapt it for your needs:
@@ -129,55 +134,57 @@ qemu-system-x86_64 -enable-kvm -net nic -net user,hostfwd=tcp::2222-:22,smb=$PWD
   * `-m`: RAM size;
   * `-smp`: Simulate a SMP system with n CPUs.
 
-For a detailed information about the above options take a look at the man page.
+This will pop up a window with the recently installed distribution from the step before. For a detailed information about options used in this command, take a look at the man page.
 
 **Notice:**
 In some distros, the command above fails or show a warning due to the
-`-enable-kvm` parameter. Probably, your username is not a part of the KVM
+`-enable-kvm` parameter. Probably, your host user isn't part of the KVM
 group. You can fix it by adding yourself to the KVM group. For example:
-`sudo usermod -a -G kvm username`
+`sudo usermod -a -G kvm $USER`
 {: .notice_warning}
 
-## Configure ssh
+## Configuring ssh (optional)
+
+At this point, it's possible to log in and out of the VM, but it requires typing the VM's user's password
+every single time. Followings steps below will create a passwordless ssh conection, using an RSA key pair
 
 **Info:**
-You have a vast number of options for setting up your SSH; we provide a 1000
+There's so many ways for setting up an SSH connection; here's a 1000
 foot view of the process.
 {: .notice_info}
 
-To improve your experience with VM, it is a good idea to set up the ssh. First,
-you need to create a key pair on your machine (if you do not have it yet) with
-the command:
+First, create an RSA key pair on the host machine (if there isn't any already) with the command:
 
 ```
 ssh-keygen -t rsa
 ```
 
-We will not discuss details about this processes here because you can easily
-find information about this configuration on the Internet [4]. After the key
-set up, you need to prepare your VM to accept ssh connection. Just install the
-package `openssh` (Arch: openssh, Debian: openssh-server).
+Explaining the command above is beyond this tutorial. There's plenty information about it on the Internet [4]. 
+After the key is set up, you need to prepare the recently created VM to accept ssh connections. Just install the
+package `openssh` on it (Arch: openssh, Debian: openssh-server).
 
-Subsequently a fresh installation, you will need to temporally enable password
-authentication in your VM in order to get into the VM from your host machine.
+Because this is a fresh installation, you will need to temporally enable password
+authentication in the VM in order to log in from the host machine.
 Follow the steps below:
 
-1. In your VM:  `sudo vim /etc/ssh/sshd_config`;
-2. Search for `PasswordAuthentication`, enable it by uncomment (just delete the
-  `#` in front of the option) and set it to `yes`;
-3. Restart the service: `sudo systemctl restart sshd`.
+1. In the VM: `sudo sed -i 's/#.*PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config`;
+2. Restart the service: `sudo systemctl restart sshd`.
 
-Now, from your host machine test the login in the VM with:
+Now, from the host machine test logging in into the VM with:
 
 ```
 ssh -p 2222 127.0.0.1
 ```
 
-If everything works as expected, at this point, you can access the VM from your
-host machine. Go out of the VM, and from your host machine type:
+**Notice**
+Note that the command above will try to log int to VM using the default host's username, which is $USER.
+{: .notice_warning}
+
+If everything works as expected, at this point, you're probably accessing the VM's shell. 
+Moving on, log out of the VM, and from the host machine type the following:
 
 ```
-ssh-copy-id -p 2222 user@127.0.0.1
+ssh-copy-id -p 2222 $USER@127.0.0.1
 ```
 
 Try to reaccess the VM, open the file `sshd_config`, comment the line with
@@ -187,9 +194,9 @@ using your ssh key.
 
 ## Conclusion
 
-Keep in mind that we just scratch the QEMU surface, this tool provides a lot of
-features and have other tools to make easy the management of VMs. Finally,
-follow the feed for new tutorials about QEMU and Linux development.
+Keep in mind that we just scratched QEMU's surface, this tool provides a lot of
+features and have other tools to make VM management easy. Finally,
+follow my feed for new tutorials about QEMU and Linux development.
 
 ## History
 
