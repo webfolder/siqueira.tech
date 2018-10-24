@@ -21,6 +21,8 @@ logo: logo.png
 locale: en_US
 timezone: America/Sao_Paulo
 permalink: pretty
+description: "Logbooks are an unstructured text which we explain operations, and approaches taken by us to finish the work; in a nutshell, it is an analogy with navigation of a ship. I like this idea and continuously use it in my life, and this site represents a materialization of this concept."
+keywords: "kernel, development, bash, c, tutorial, documentation, report, siqueira"
 
 # Jekyll
 permalink:          /:categories/:title/

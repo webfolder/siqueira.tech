@@ -14,7 +14,8 @@ my life trying to understand this area and contributing to GNU/Linux.
 
 ## Other infos
 
-1. Email: rodrigosiqueiramelo@gmail.com
-2. IRC: siqueira
+1. Email: rodrigosiqueiramelo at gmail dot com
+2. IRC: siqueira (ccsl-usp@freenode)
 3. Github: [rodrigosiqueira](https://github.com/rodrigosiqueira)
 4. Linkedin: [rodrigosiqueirajordao](https://www.linkedin.com/in/rodrigosiqueirajordao)
+5. Twitter: [@siqueirajordao](https://twitter.com/siqueirajordao)
