@@ -46,6 +46,22 @@ operate in two different modes [2]:
 If you have an `x86` machine, you can use QEMU with KVM and achieve high
 performance.
 
+Keep in mind that we should avoid working inside the VM because it is a waste
+of computational resource. We want to work as much as possible in the host and
+use the VM only for testing; because of this, for making our work environment
+comfortable, we need:
+
+* SSH access;
+* Share directory between host and guest.
+
+Finally, to have an overview of the workflow adopt for this tutorial take a
+careful look at Figure 1.
+
+{% include image-post.html
+  path="posts/kernel_others/guest_host.png"
+  caption="Figure 1: Workflow" %}
+
+
 ## Prerequisites: Installing QEMU and KVM
 
 To follow this tutorial you need to install QEMU and Samba Client (for sharing
@@ -192,11 +208,82 @@ Try to reaccess the VM, open the file `sshd_config`, comment the line with
 Finally, try to ssh into the VM, and you will be able to access the machine
 using your ssh key.
 
+## Sharing a directory with your local machine
+
+We are close to have a great development environment for playing with Linux Kernel, we just have to setup a final detail: share a directory between our VM and our host system. We want share a directory, because we only want to use it for testing and not for developing; we want to compile the kernel in our powerful host machine and just intall the final binaries in the VM. For make this configuration, we will use a share mechanism provided by samba.
+
+First, we need to install the samba and cisfs package in the system. For installing try:
+
+```
+# ArchLinux
+sudo pacman -S samba cifs-utils
+
+# Debian
+sudo apt install samba cifs-utils
+```
+
+Second, start the VM and install the same packages.
+
+```
+$ qemu-system-x86_64 -enable-kvm -net nic -net user,hostfwd=tcp::2222-:22,smb=$PWD/ \
+                   -daemonize -m 2G -smp cores=4,cpus=4 kernel_experiments
+
+$ ssh -p 2222 127.0.0.1
+
+[inside_vm] $ sudo pacman -S samba cifs-utils
+```
+
+Now, we want to make a automatic setup in our VM that make the directory shareable on-demand, i.e, the VM and host start to share a directory if the user try to access the folder. For doing it, we have to create a new `systemctl` entry. In your VM create the file `home-shared.mount` inside `/etc/systemd/system/`, with the following content:
+
+```
+[Unit]
+Description=Mount Share at boot
+Requires=systemd-networkd.service
+After=network-online.target
+Wants=network-online.target
+
+[Mount]
+What=//10.0.2.4/qemu
+Where=/home/{{ user }}/shared
+Options=x-systemd.automount,_netdev,x-systemd.device-timeout=10,uid=1000,noperm,credentials=/root/.cifs
+Type=cifs
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Additionally, create another file named `.cifs` in `/root/` with the following content:
+
+```
+username=YOUR_USER_NAME
+password=ANY_PASSWORD_YOU_WANT
+```
+
+Now, we have to update the `/etc/fstab`. In the end of this file add the following line:
+
+```
+//10.0.2.4/qemu         /home/YOUR_USER/shared/  cifs    uid=1000,credentials=/root/.cifs,x-systemd.automount,noperm 0 0
+```
+
+Finally, we just need two more commands:
+
+```
+[inside_vm] $ mkdir shared
+[inside_vm] $ sudo systemctl daemon-reload
+```
+
+Reboot your VM, start it using the aforementioned command, then access it via ssh, and try to access the `shared` directory. If everything going well, you should see the directory and files that you shared with your host machine.
+
 ## Conclusion
 
 Keep in mind that we just scratched QEMU's surface, this tool provides a lot of
 features and have other tools to make VM management easy. Finally,
 follow my feed for new tutorials about QEMU and Linux development.
+
+## Acknowledgments
+
+I would like to thanks Charles Oliveira for his review and contributions for this tutorial.
 
 ## History
 
