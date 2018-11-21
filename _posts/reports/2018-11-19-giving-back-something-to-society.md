@@ -6,9 +6,6 @@ categories: report
 published: true
 ---
 
-# {{ page.title }}
----
-
 Since the day I had my first class of Operating Systems (OS) in my engineering
 course, I got passionate about it; for me, OS represents one of the greatest
 achievements of mankind. As a result of my delight for OS, I always tried to

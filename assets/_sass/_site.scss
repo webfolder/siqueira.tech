@@ -37,6 +37,14 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width : 860px) {
+  .content {
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+} 
+
 canvas {
   width: 100%;
   height: 100%;
@@ -490,6 +498,7 @@ canvas {
     h2 {
       font-size: 30px;
       margin-bottom: 15px;
+      text-align: left;
     }
     p {
       color: darken($white, 40);
@@ -513,6 +522,42 @@ canvas {
   .tags li > a {
     color: lighten($black, 28%);
   }
+
+  @media screen and (max-width : 860px) {
+    > li {
+      margin-bottom: 10px;
+      padding-bottom: 20%;
+      border-bottom: 1px solid darken($white, 8.2353);
+      list-style: none;
+      &:last-child {
+        border: none;
+      }
+      h2 {
+        font-size: 6vw;
+        margin-bottom: 15px;
+        text-align: left;
+        text-transform: uppercase;
+      }
+      p {
+        color: darken($white, 40);
+      }
+      .date {
+        color: #399f62;
+        font-size: 3vw;
+        text-align: center;
+        padding-top: 5px;
+        text-transform: uppercase;
+      }
+      .post-title {
+        display: inline-block;
+        max-width: 100%;
+        color: black;
+        &:hover span {
+          border-bottom: 1px dotted $green;
+        }
+      }
+    }
+  }
 }
 
 .tags {
@@ -532,9 +577,9 @@ canvas {
 
 .inner-post {
   h1 {
-    font-size: 50px;
-    line-height: 70px;
-    margin-bottom: 50px;
+    font-size: 3vw;
+    text-transform: uppercase;
+    text-align: center;
   }
   h2 {
     font-size: 30px;
@@ -578,6 +623,12 @@ canvas {
       }
     }
   }
+
+  @media screen and (max-width : 860px) {
+    h1 {
+      font-size: 8vw;
+    }
+  } 
 }
 
 .demo {
@@ -702,13 +753,13 @@ canvas {
 }
 
 // Media queries
-@media screen and (max-height: 605px) {
+@media screen and (max-height: 860px) {
   .post-title-section .section-title {
     font-size: 45px;
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 860px) {
   .block-left,
   .block-right {
     float: none;
@@ -730,7 +781,7 @@ canvas {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 860px) {
   .posts-list {
     margin-top: 80px;
     > li {
@@ -868,4 +919,120 @@ canvas {
       }
     }
   }
+}
+
+/** MENU **/
+.menu-header > ul
+{
+  margin: 0px;
+  position: relative;
+  background-color: white;
+  list-style-type: none;
+  border-bottom-style: solid;
+  border-color: #E3E0CF;
+  border-width: 2px;
+  text-align: center;
+}
+
+.menu-header li
+{
+  display: inline-block;
+  float: center;
+  margin-right: 1px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+.menu-header li a
+{
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #3B3A36;
+}
+
+.menu-header li:hover a
+{
+  color: #9FA8A3;
+  border-top: solid;
+  border-width: 3px;
+}
+
+.menu-header li:hover a#home_logo
+{
+  border-top: none;
+}
+
+/** Handling responsiveness **/
+.show-menu
+{
+  display: none;
+  font-weight: bold;
+  text-align: center;
+  color: #FFF;
+  background: #333;
+  padding: 5px 0;
+  overflow: hidden;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]
+{
+  display: none;
+  -webkit-appearance: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu
+{
+    display: block;
+}
+
+@media screen and (max-width : 860px)
+{
+  /*Make dropdown links appear inline*/
+  .menu-header ul
+  {
+    position: static;
+    display: none;
+  }
+  /*Create vertical spacing*/
+  .menu-header li
+  {
+    margin-bottom: 1px;
+  }
+  /*Make all menu links full width*/
+  .menu-header ul li, li a
+  {
+    width: 100%;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 7px;
+    text-decoration: none;
+  }
+
+  .menu-header ul li img
+  {
+    width: 20%;
+    height: auto;
+  }
+
+  /*Display 'show menu' link*/
+  .show-menu
+  {
+    display: block;
+  }
+
+  .menu-header li:hover a
+  {
+    border-top: none;
+    background-color: #ddd;
+    color: black;
+  }
+
 }
