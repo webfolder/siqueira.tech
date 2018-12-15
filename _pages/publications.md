@@ -4,8 +4,6 @@ layout: post
 permalink: /publications/
 ---
 
-# Publications
-
 ## FLOSS Project Management in Government-Academia Collaboration
 
 Government and academia can collaborate on bringing innovation and filling

@@ -4,8 +4,6 @@ layout: post
 permalink: /cv/
 ---
 
-# CV
-
 ## Summary
 
 Current pursuing Master Degree in Computer Science at the University of Sao
