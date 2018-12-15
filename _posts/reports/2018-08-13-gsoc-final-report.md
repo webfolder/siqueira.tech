@@ -6,9 +6,6 @@ categories: report
 published: true
 ---
 
-# {{ page.title }}
----
-
 Nothing lasts forever, and this also applies for GSoC projects. In this report,
 I tried to summarize my experience in the DRI community and my contributions.
 

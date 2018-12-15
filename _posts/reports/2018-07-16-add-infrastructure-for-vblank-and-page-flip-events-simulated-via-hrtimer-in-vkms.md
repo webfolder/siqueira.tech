@@ -6,9 +6,6 @@ categories: report
 published: true
 ---
 
-# {{ page.title }}
----
-
 Since the beginning of May 2018, I have been diving into the DRM subsystem. In
 the beginning, nothing made sense to me, and I had to fight hard to understand
 how things work. Fortunately, I was not alone, and I had great support from
