@@ -111,7 +111,7 @@ a.btn {
 @mixin notice($notice-color) {
   margin: 2em 0 !important;  // override
   padding: 1em;
-  font-size: 0.9em !important;
+  font-size: 1.2em !important;
   text-indent: initial; // override
   background-color: mix(#fff, $notice-color, 90%);
   border-radius: 2px;
