@@ -2,7 +2,7 @@
 layout: post
 title:  "Use QEMU to Play with Linux Kernel"
 date:   2018-09-11
-published: true
+published: false
 categories: kernel_others
 ---
 

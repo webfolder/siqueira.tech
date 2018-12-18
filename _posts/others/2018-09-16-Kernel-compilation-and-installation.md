@@ -2,7 +2,7 @@
 layout: post
 title:  "Kernel Compilation and Installation"
 date:   2018-09-16
-published: true
+published: false
 categories: kernel_others
 ---
 
