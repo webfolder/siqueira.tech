@@ -6,60 +6,60 @@ permalink: /cv/
 
 ## Summary
 
-Current pursuing Master Degree in Computer Science at the University of Sao
-Paulo, graduated in Software Engineering from the University of Brasilia and
-technician degree in Software development from SENAC. I have worked with
-different technologies along my professional and academic path. I am extremely
-comfortable in learning new technologies and programming language. I am
-interested in research related to operating system, embedded systems, low-level
-programming, computer architecture, parallel programming, and mobile
-programming.
+Bachelor in Software Engineering and Masters in Computer Science at the
+University of São Paulo. I have worked with different technologies along my
+professional and academic career, being most passionate about Operating Systems
+(OSes). I also volunteer to the Free/Libre and Open Source Software (FLOSS)
+community.
 
 ## Professional Background
+---
 
-> **Freelancer Developer, Into the Unknown (November 2016 -- April 2017, Sao Paulo, Brazil):**
+> **Autonomous Linux Kernel Contributor (Since January 2018, São Paulo, Brazil)**
 
-A Journey through Science Fiction: Into the Unknown was an exhibition
-organized by Barbican, England and later moved to Greece. We had to develop two
-applications for running in a desktop and tablet. First application was written
-in C++ with SDL, and managing user access to different games. The second was a
-music player written in Java for executing in Android Environment. Both
-software lock down the application to protect desktop and tablet of unwanted
-access from users (Kiosk application). I worked with one developer and a
-tester; we also had to interact with a design
-team.
+I upstreamed over 30 commits to the Linux Kernel mainline, across different
+parts of the project: Context Switch (Core), Virtual Kernel Mode-Setting (DRM),
+and IIO. I have also contributed to related projects such as IGT GPU Tools
+(IGT) and Debian.
 
-> **Developer and Technical Leader, Brazilian Public Software (July 2014 -- December 2015, Brasilia, Brazil):**
+> **Intern at Xorg Foundation Working on DRM, Google Summer of Code (GSoC) (April 2018 -- September 2018 -- São Paulo, Brazil (Remotely)**
 
-The Brazilian Public Software (SPB) was a
-thirty-month project created in partnership with Brazilian Ministry of
-Planning, Budget, and Management (MPOG) and University of Brasilia. During the
-project, I worked with Python, Ruby, Django, Rails, Chef, and CentOS
-environment. I actively worked in the creation and organization of the DevOps
-team. SPB was composed of 6 different teams, with an average of 30 members per
-semester, because of this I also worked as a technical leader, supporting the
-management of other teams.
+I worked (with another student) to develop a software-only Kernel Mode-Setting
+driver module that is useful for testing, debugging, benchmarking, and running
+compositors on headless machines while still leaving the machine's GPU free for
+other tasks (more details at
+[GSOC-Final-Report](https://siqueira.tech/report/gsoc-final-report/). During
+the project, I had to acquire a significant body of knowledge in how the Linux
+graphics stack works.
 
-> **Android Developer as Intern at Samsung (2012 -- 2013, Suwon-si, South Korea) :**
+> **Into the Unknown: A Journey Through Science Fiction, Freelancer Developer (November 2016 -- April 2017 -- São Paulo, Brazil)**
 
-I was an intern at Samsung in 2014 as an intern, after a long selection
-process. First day at the company was solely focused in developing an Android
-app from scratch, considering I was new to it, that was quite a challenge.
-Firstly, I have built a paper prototype with the main idea of the application
-to avoid waste time with wrong requirements. Secondly, I developed the
-entity-relationship of my database, in parallel, I designed the architecture. I
-focused to create a robust architecture, consequently, I applied several design
-patterns (MVC, Strategy, Observer, Method Factory, Singleton, and Active
-Record).  In the half of my internship, my Android skills improved a lot, but
-was not enough for accomplishing the project requirement.  In order to finish
-my tasks and keep quality, I decided to do overtime. I coded many hours per
-day, but always kept my attention on my code style, documentation (Doxygen),
-and the use of SDK tools instead of using IDE. At the end of the internship, I
-had to defend my project in front of many engineers that I have never seen.
-Fortunately, everybody liked my project and I successfully concluded my
-internship.
+Into the Unknown was an exhibition that happened in London and was organized by
+Barbican. The team I was part of had to develop two applications: one in C++
+using SDL framework targeted for managing user access to different games on a
+desktop; and one in Java for a music player targeted at Android tablets. Both
+applications lock down the machine to prevent unwanted access from users. I
+worked with one developer and a tester.
 
-> **Web Developerat at AEG (September 2011 -- July 2012, Brasilia, Brazil):**
+> **Brazilian Public Software (SPB) Platform, Developer and Technical Leader (July 2014 -- December 2015 -- Brasília, Brazil)**
+
+SPB is a Collaborative Developing Environment that aims at reducing government
+costs with software contracts. It was a partnership between the Brazilian
+Ministry of Budget and the University of Brasília. During the project, I
+programmed mostly with Python and Ruby, and actively acted both on creating the
+DevOps team and as the technical liaison with other teams.
+
+> **Intern at Samsung, Android Developer (2014 -- Suwon-si, South Korea)**
+
+I was given the task of developing an Android app from scratch (details are
+omitted due to a NDA). The main idea of the application was paper drafted so
+that no time with wrong requirements was wasted. Next came the
+entity-relationship structure of the database alongside with the architecture.
+I focused on creating a robust architecture, made possible by the use of the
+pertinent design patterns learned at school. At the end of the internship, I
+had to present the project for many engineers from other teams for evaluation.
+
+> **Web Developerat at AEG (September 2011 -- July 2012, Brasilia, Brazil)**
 
 AEG is a small company, which provides business consultancy to
 other businesses. When I worked for AEG, they needed a web system for handling
@@ -69,58 +69,49 @@ requirements and then designed the architecture. I have created the system
 which uses MySQL 4.0, PHP 4.3, and running under Apache 2.3.
 
 ## Academic Background
+---
 
-> **January 2016 -- May 2018, University of Sao Paulo (USP) - Institute of
-Mathematics and Statistics, Sao Paulo, SP:**
+> **January 2016--February 2019, University of São Paulo (USP) - M.S. in Computer Science, São Paulo, Brazil**
 
-Current I am pursuing a M.S. in Computer Science at USP and my research area is
-in Operating Systems. At the beginning of my M.s, I worked on a project with
-Hewlett Packard (HP), wherein I was involved with the study of memory
-management algorithms for large memory. I evaluated the behavior of one
-specific algorithm implemented from HP, by using a real-world application:
-Apache Httpd. I modified the Apache Web server for using HP's code and create a
-particular benchmark to evaluate it. I am still working on my master.
+My research area focuses on Operating Systems. It all began with a partnership
+project with Hewlett Packard (HP), wherein I was involved with the study of new
+memory management techniques for high density memories. I evaluated the
+behavior of one specific algorithm implemented by HP, using Apache HTTPD in
+benchmarks as study case.  From this specific algorithm, the research was
+expanded to a discussion of new OS process abstractions with the goal of
+assisting in the definition of the next standard generation of OS process
+management.
 
-> **July 2009 -- July 2015, University of Brasilia, Software Engineering with
-major in electronics, Brasilia, DF:**
+> **March 2009 -- July 2015, University of Brasília, B.S. in Software Engineering with Major in Electronics, Brasília, Brazil**
 
-During my undergraduate, I realized that
-my favorite subject is embedded systems and operating systems; as a result, I
-took many extra classes related to a digital systems and low-level programming.
-I joined the embedded system laboratory and worked with Samsung S3C2440 in a
-bare metal environment to build a telemetry system. Although I focused on
-embedded systems, I studied many techniques related to code quality. I also
-joined a laboratory named LAPPIS which gave me the opportunity to work on a
-large web system. Finally, in my capstone project, I worked with GPUs.
+The course is a five-year program that covers classes ranging from hands-on
+programming to requirement analysis and project management. During my Bachelor
+course I took extra classes in digital systems and low-level programming, hence
+the major in electronics. I joined the embedded systems laboratory and worked
+with Samsung S3C2440 board in a bare metal environment to build a telemetry
+system.
 
 ## Extra-curricular activity
 
-> **July 2013 -- July 2014, Sungkyunkwan University (SKKU), Exchange student in
-Computer Engineering, South Korea, Suwon:**
+> **July 2013 -- July 2014, Sungkyunkwan University (SKKU), Exchange Student in Computer Engineering, South Korea, Suwon**
 
-I decided to study in South Korea
-because of the excellence in the embedded systems, and because I wished for an
-internship in the Samsung Digital City. During my stay, I focused on low-level
-programming and operating systems. Additionally, I tried to improve my English
-skills and learned the basic level of Korean language. I joined the automation
-laboratory where I stayed for 6 months. When I was in the automation lab,
-Professor Jae Wook Jeon oriented me to study GPU in embedded systems. I
-followed his advice, and concentrated my efforts in deeply understanding the
-subject.
+I decided to pursue an exchange period of studies in South Korea due to the
+Country's excellence in embedded systems and to my interest in working as
+intern at Samsung Digital City. I focused on low-level programming and OS.
+Additionally, I improved my English and began to learn the elementary level of
+the Korean language. I joined the automation laboratory, managed by professor
+Jae Wook Jeon, to learn about GPUs in embedded systems.
 
-## Publications
+## Publications (as author or co-author)
 
-* Continuous Delivery: Building Trust in a Large-scale, Complex Government Organization (IEEE Software): Accepted, still on wait for publication
+* Continuous Delivery: Building Trust in a Large-scale, Complex Government Organization (IEEE Software'18)
 * Brazilian Public Software Portal: an integrated platform for collaborative development (OpenSym '17)
 * Optimizing a Boundary Elements Method for Stationary Elastodynamic Problems implementation with GPUs (WSCAD'17)
+* FLOSS Project Management in Government-Academia Collaboration (OSS'18)
+* Leading successful government-academia collaboration using FLOSS and agile values (JSS) -- _under review_
+* The Next-Generation OS Process Abstraction (IEEE Computer) -- _to be submitted_
 
-## Technical and Personal skills
+## Talks
 
-* **Programming Languages:** C/C++ C99 and C11, Java 6 and 7, Android, Python
-2.7, Assembly Samsung S32440 and 8086, Ruby 2.4, Rails 4.2, and Django 1.7
-
-* **Basic Tools:** GCC 7.2, GNU/Linux Environment (Debian, Arch, CentOS),
-Continuous Integration, Make 4.2, vim 8.0, git 2.15, Doxygen 1.8, neomutt,
-Latex, Ansible
-
-* **Languages:** English
+* **[XDC 2018: VKMS](https://youtu.be/ber_9vkj_-U)**
+* **[Linuxdev-br 2018 (in Portuguese): Da linuxdev-br ao GSoC: Displays Virtuais no Kernel](https://youtu.be/S0hBHiiTDjA)**
