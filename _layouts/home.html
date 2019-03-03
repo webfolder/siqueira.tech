@@ -1,37 +1,23 @@
 ---
+layout: default
 ---
+<div class="inner-post content">
+  {{ content }}
+</div>
 
-<!DOCTYPE html>
-<html>
-
-{% include head.html %}
-
-  <body>
-
-  {% include top-header.html %}
-
-    <div class="inner-post content">
-
-      {{ content }}
-
-    </div>
-
-    <div class="list-content-box">
-      <h2>Recent Posts</h2>
-      <hr>
-        <ul class="posts-list">
-            {% for post in site.posts limit:3 %}
-            <li>
-              <h2>
-                <a href="{{ site.url }}{{ post.url }}" class="post-title">
-                  <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-                </a>
-                <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
-              </h2>
-              </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-  </body>
-</html>
+<div class="list-content-box">
+  <h2>Recent Posts</h2>
+  <hr>
+    <ul class="posts-list">
+        {% for post in site.posts limit:3 %}
+        <li>
+          <h2>
+            <a href="{{ site.url }}{{ post.url }}" class="post-title">
+              <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+            </a>
+            <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
+          </h2>
+          </li>
+        {% endfor %}
+    </ul>
+</div>

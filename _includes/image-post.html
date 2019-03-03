@@ -1,7 +1,23 @@
+{%- comment -%}
+
+Parameters:
+  path
+  caption
+  left
+{%- endcomment -%}
+
 {% capture fig_img %}
-![foo]({{ site.url }}/images/{{ include.path }})
+  {{ site.url }}/images/{{ include.path }}
 {% endcapture %}
-<figure>
-  {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
-  <figcaption> {{ include.caption  }} </figcaption>
-</figure>
+
+{% capture left_side %}
+  float: left;
+{% endcapture %}
+
+{% if include.left %}
+  <img src="{{ fig_img }}" style="{{ left_side }}" alt="{{ include.caption }}">
+{% else %}
+<img src="{{ fig_img }}" alt="{{ include.caption }}">
+{% endif %}
+
+<figcaption style="text-align: center; font-weight: bold;"> {{ include.caption  }} </figcaption>
