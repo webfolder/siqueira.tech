@@ -1,0 +1,51 @@
+---
+permalink: /categories/
+---
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include top-header.html %}
+
+    <h1> {{ page.title }}</h1>
+
+    {%- capture page_name -%}
+      {{ page.name }}
+    {%- endcapture -%}
+
+    <div class="center-list-items">
+      {%- for page in site.pages -%}
+
+        {%- if page.categories contains page_name -%}
+
+          {%- capture page_item_link -%}
+            {{ site.url }}/{{ page.ref }}
+          {%- endcapture -%}
+
+          {%- capture page_item_icon_alt -%}
+            Abstract to concrete
+          {%- endcapture -%}
+
+          {%- capture page_item_icon_path -%}
+            {{ site.url }}/images/icons/{{ page.image }}.png
+          {%- endcapture -%}
+
+          {%- capture page_item_desc -%}
+            {{ page.title }}
+          {%- endcapture -%}
+
+          {%- include item_fig_desc.html
+            item_link=page_item_link
+            item_icon_alt=page_item_icon_alt
+            item_icon_path=page_item_icon_path
+            item_desc=page_item_desc
+            item_modal='' -%}
+
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </body>
+</html>

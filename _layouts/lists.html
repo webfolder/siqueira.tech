@@ -1,0 +1,35 @@
+---
+permalink: /categories/
+---
+
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+  <body>
+
+  {% include top-header.html %}
+
+    <div class="list-content-box">
+      <h1> {{ page.title }} </h1>
+      <hr>
+        <ul>
+          {% for post in site.posts %}
+            {% if post.categories contains page.filter_by %}
+              <li>
+                <h2>
+                  <a href="{{ site.url }}{{ post.url }}" class="post-title">
+                    <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+                  </a>
+                </h2>
+                <span class="date">{{  post.author }} on {{ post.date | date: '%d %b %Y' }}</span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </hr>
+    </div>
+
+  </body>
+</html>
