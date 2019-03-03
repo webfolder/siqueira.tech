@@ -2,6 +2,6 @@
 title: IIO
 layout: lists
 description: "Industrial I/O"
-filter_by: "linux-kernel"
+filter_by: "iio"
 permalink: /iio/
 ---

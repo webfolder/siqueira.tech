@@ -1,7 +1,7 @@
 ---
 title:  "Basic"
 image:  "others"
-ref: "kernel-basic"
+ref: "linux-kernel-basic"
 categories: "linux-kernel.md"
 ---
 
