@@ -1,10 +1,10 @@
 ---
-title: publications
+title: Publications
 layout: post
 permalink: /publications/
 ---
 
-## FLOSS Project Management in Government-Academia Collaboration
+## [FLOSS Project Management in Government-Academia Collaboration](https://link.springer.com/chapter/10.1007/978-3-319-92375-8_2)
 
 Government and academia can collaborate on bringing innovation and filling
 design-reality gaps in e-government projects. However, differences in project
@@ -16,9 +16,9 @@ practices based on FLOSS and agile software development approaches that favors
 team management in government-academia collaborations in e-government
 development projects.
 
-- [Paper]({{ site.baseurl }}/files/spb-oss-2018.pdf)
+[Download]({{ site.baseurl }}/files/spb-oss-2018.pdf)
 
-## Continuous delivery: building trust in a large-scale, complex government organization
+## [Continuous delivery: building trust in a large-scale, complex government organization](https://ieeexplore.ieee.org/abstract/document/8255783)
 
 For many software development teams, the first aspects that come to mind
 regarding continuous delivery (CD) are the operational challenges and
@@ -30,9 +30,9 @@ to overcome them. The article concludes with a set of lessons learned that can
 be valuable for readers in a variety of situations. This article is part of a
 special issue on release engineering.
 
-- [Paper]({{ site.baseurl }}/files/continuous_delivery.pdf)
+[Download]({{ site.baseurl }}/files/continuous_delivery.pdf)
 
-## Brazilian Public Software Portal: an integrated platform for collaborative development
+## [Brazilian Public Software Portal: an integrated platform for collaborative development](https://dl.acm.org/citation.cfm?id=3125471)
 
 The Brazilian Public Software (SPB) is a program promoted by the Brazilian
 Federal Government to foster sharing and collaboration on Free/Libre/Open
@@ -53,9 +53,9 @@ Alongside the architectural challenges, we also discuss in this paper our work
 process, based on agile and free software development practices, and the
 lessons learned during 30 months of work on the SPB project.
 
-- [Paper]({{ site.baseurl }}/files/opensym_spb_2017.pdf)
+[Download]({{ site.baseurl }}/files/opensym_spb_2017.pdf)
 
-## Optimizing a Boundary Elements Method for Stationary Elastodynamic Problems implementation with GPUs
+## [Optimizing a Boundary Elements Method for Stationary Elastodynamic Problems implementation with GPUs](http://wscad.sbc.org.br/anais/anais-wscad-wic-2017.pdf#page=58)
 
 The Boundary Element Method requires a geometry discretization to execute
 simulations, and it can be used to analyze the 3D stationary behavior of wave
@@ -65,4 +65,4 @@ Graphical Processing Units (GPU) were used to accelerate this process. In an
 experiment with 4000 Mesh elements and 1600 Boundary elements, a speedup of
 107× was obtained with a GeForce GTX980.
 
-- [Paper]({{ site.baseurl }}/files/opensym_spb_2017.pdf)
+[Download]({{ site.baseurl }}/files/anais-wscad-wic-2017.pdf)

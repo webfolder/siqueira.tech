@@ -1,5 +1,5 @@
 ---
-title:  "Publication"
+title:  "Publications"
 image:  "publications_a2c"
 ref: "publications"
 categories: "about.md"
