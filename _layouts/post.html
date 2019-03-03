@@ -1,44 +1,29 @@
 ---
+layout: default
 ---
 
-<!DOCTYPE html>
-<html>
+<div class="inner-post content">
 
-{% include head.html %}
+  <div class="date-highlight">
+    {% if page.date %}
+      {{ page.date | date: '%d %b %Y' }}
+    {% else %}
+      &#x2756;
+    {% endif %}
+  </div>
 
-  <body>
+  <div align="center">
+    {% include share.html %}
+  </div>
 
-  {% include top-header.html %}
+    {{ content }}
 
-    <div class="inner-post content">
+  <hr>
 
-      <div align="center">
-        {% include share.html %}
-      </div>
+  <div align="center">
+    {% include share.html %}
+  </div>
 
-      <div class="date-highlight">
-        {% if page.date %}
-          {{ page.date | date: '%d %b %Y' }}
-        {% else %}
-          &#x2756;
-        {% endif %}
-      </div>
+</div>
 
-        <h1> {{ page.title }} </h1>
-        <hr>
-
-        {{ content }}
-
-      <br>
-
-      <div align="center">
-        {% include share.html %}
-      </div>
-
-    </div>
-
-    {% include scripts.html %}
-    {% include overlay.html %}
-
-  </body>
-</html>
+{% include scripts.html %}
