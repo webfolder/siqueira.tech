@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+    <div class="inner-post content">
+      {{ content }}
+    </div>
+
+    <div class="center-list-items">
+
+      {%- capture page_name -%}
+        {{ page.name }}
+      {%- endcapture -%}
+
+      {%- for page in site.pages -%}
+        {% if page.categories contains page_name %}
+
+          {%- capture page_item_link -%}
+            {{ site.url }}/{{ page.ref }}
+          {%- endcapture -%}
+
+          {%- capture page_item_title -%}
+            {{ page.title }}
+          {%- endcapture -%}
+
+          {%- capture page_item_link -%}
+            {{ site.url }}/{{ page.ref }}
+          {%- endcapture -%}
+
+          {%- capture page_item_icon_alt -%}
+            Abstract to concrete
+          {%- endcapture -%}
+
+          {%- capture page_item_icon_path -%}
+            {{ site.url }}/images/icons/{{ page.image }}.png
+          {%- endcapture -%}
+
+          {%- include item_fig_desc.html
+            item_link=page_item_link
+            item_icon_alt=page_item_icon_alt
+            item_icon_path=page_item_icon_path
+            item_desc=page_item_title
+            item_modal=page_modals -%}
+
+        {% endif %}
+      {%- endfor -%}
+      <div class="clearfix"></div>
+    </div>

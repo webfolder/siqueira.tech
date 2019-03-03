@@ -1,8 +1,12 @@
 ---
 title: About
-layout: about
+layout: text_with_list_items
 permalink: /about/
 ---
+
+{% include image-post.html
+  path="me2.png"
+  left="true" %}
 
 I have a B.S in Software Engineering and M.S in Computer Science at the
 University of São Paulo. My research interests gravitate around OS, FLOSS, and
