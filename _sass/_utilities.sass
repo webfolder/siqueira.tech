@@ -150,17 +150,29 @@ a.btn
 
       // override
 
-.notice
-  +notice(darken($white, 30%))
+/* Highlights
+/* Ref: https://pixelita.com/10401/creating-info-boxes-with-css/
+.info, .success, .warning, .error, .definition
+  border: 1px solid
+  margin: 10px 0px
+  padding: 15px 10px
 
-  &_info
-    +notice($aqua)
+.info
+  color: #00529b
+  background-color: #bde5f8
 
-  &_warning
-    +notice($yellow)
+.success
+  color: #4f8a10
+  background-color: #dff2bf
 
-  &_success
-    +notice($green)
+.warning
+  color: #9f6000
+  background-color: #FEEFB3
 
-  &_danger
-    +notice($red)
+.danger
+  color: #D8000C
+  background-color: #FFBABA
+
+.definition
+  color: #000000
+  background-color: #FFFFFF
