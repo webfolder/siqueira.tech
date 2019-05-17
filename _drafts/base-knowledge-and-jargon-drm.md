@@ -3,7 +3,6 @@ layout: post
 title:  "Establishing the necessary knowledge and jargon"
 date:   2018-07-13
 categories: drm
-published: false
 ---
 
 When I started to dive into the DRM subsystem, I had a no background on the graphic stack. As a result, during my collaboration to develop the Virtual Kernel Mode-Setting (VKMS) I constantly read the documentation. Seriously, I read the documentation an enormous amount of time and I really recommend any newcomer to do the same because the DRM documentation is great. However, most of the time when I started to read the documentation I found a lot of difficult to understand, but the reason was simple: I did not have the required knowledge and I did not understand the jargon. Inspired by that, I decided to write a post with the goal to provide an overview about the DRM subsystem to try to make easy for newcomers to take more advantage from the documentation and also better understand the code.
