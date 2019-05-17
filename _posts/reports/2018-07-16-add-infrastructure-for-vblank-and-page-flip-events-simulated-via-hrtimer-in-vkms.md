@@ -23,8 +23,8 @@ development process to add a Vblank infrastructure to VKMS had three main steps
 as Figure 1 describes.
 
 {% include image-post.html
-  path="posts/tdd-drm.png"
-  caption="Figure 1: My work cycle in VKMS" %}
+  src="posts/tdd-drm.png"
+  caption="My work cycle in VKMS" %}
 
 Firstly, I focused only on the subtest  "basic-plain-flip" from IGT and after
 each execution of the test I checked the failure messages. Secondly, I tried to
@@ -37,8 +37,8 @@ Vblank itself, but it was a necessary infrastructure required for kms_flip to
 work.
 
 {% include image-post.html
-  path="posts/basic-plain-flip_passing.png"
-  caption="Figure 2: sudo ./tests/kms_flip  --run-subtest basic-plain-flip --force-module vkms" %}
+  src="posts/basic-plain-flip_passing.png"
+  caption="sudo ./tests/kms_flip  --run-subtest basic-plain-flip --force-module vkms" %}
 
 After an extended period of work to make VKMS pass in the basic-plain-flip, I
 finally achieved it thanks to all the support that I received from the DRM

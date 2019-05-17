@@ -1,23 +1,42 @@
 {%- comment -%}
+Add an image in a post
 
-Parameters:
-  path
-  caption
-  left
+Mandatory parameter:
+ - src: the img relative path from img/posts/tutorials/<post-sub-category>/<post-name>
+
+Optional parameters:
+ - absolute: When true, the img path is absolute
+ - caption: Img caption
+ - no-center: When true, won't align image to center
+ - style: any additional css rules
+ - class: any aditional css classes to be used
+ - url: URL to make image an anchor
 {%- endcomment -%}
 
 {% capture fig_img %}
-  {{ site.url }}/images/{{ include.path }}
+  {{ site.url }}/images/{{ include.src }}
 {% endcapture %}
 
-{% capture left_side %}
-  float: left;
-{% endcapture %}
-
-{% if include.left %}
-  <img src="{{ fig_img }}" style="{{ left_side }}" alt="{{ include.caption }}">
-{% else %}
-<img src="{{ fig_img }}" alt="{{ include.caption }}">
+<figure>
+{% if include.url %}
+  <a href="{{ include.url }}">
 {% endif %}
-
-<figcaption style="text-align: center; font-weight: bold;"> {{ include.caption  }} </figcaption>
+<img {% unless include.no-center %} class="img-center" {% endunless %}
+     src="{{ fig_img }}"
+     {% if include.caption %} alt="{{ include.caption }}" {% endif %}
+     {% if include.style %} style="{{ include.style }}" {% endif %}
+     {% if include.class %} class="{{ include.class }}" {% endif %}/>
+{% if include.url %}
+</a>
+{% endif %}
+{% if include.caption %}
+  {% if counter == nil %}
+    {% assign counter = 1 %}
+  {% endif %}
+  <figcaption {% unless include.no-center %} class="fig-center" {% endunless %}>
+    <b>Figure {{ counter }}.</b>
+    {{ include.caption | markdownify | remove: "<p>" | remove: "</p>" }}
+  </figcaption>
+  {% assign counter = counter | plus: 1 %}
+{% endif %}
+</figure>

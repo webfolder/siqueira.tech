@@ -7,8 +7,8 @@ published: true
 ---
 
 {% include image-post.html
-  path="posts/linuxdev-br.png"
-  caption=""%}
+  src="posts/linuxdev-br.png"
+  caption="linuxdev-br"%}
 
 Recently, I submitted a talk about VKMS in a conference named Linux Developer
 Conference Brazil (linuxdev-br)[1] and got accepted [2]. I am delighted with

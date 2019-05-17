@@ -5,8 +5,8 @@ permalink: /about/
 ---
 
 {% include image-post.html
-  path="me2.png"
-  left="true" %}
+  src="me2.png"
+  style="float: left" %}
 
 I have a B.S in Software Engineering and M.S in Computer Science at the
 University of São Paulo. My research interests gravitate around OS, FLOSS, and
