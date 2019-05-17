@@ -1,0 +1,5 @@
+<figure>
+  {{ markdownify | remove: "<p>" | remove: "</p>" }}
+  <figcaption> {{ include.caption }} </figcaption>
+</figure>
+

@@ -1,0 +1,12 @@
+{%- comment -%}
+Cites a reference
+
+Mandatory parameter:
+ - id: the id for citing
+{%- endcomment -%}
+{%- assign _bib_n = _bib_ids | size | minus: 1 -%}
+{%- for i in (0.._bib_n) -%}
+  {%- if _bib_ids[i] == include.id -%}
+  <a name="cite-{{ _bib_ids[i] }}-back" href="#cite-{{ _bib_ids[i] }}">[{{ i | plus: 1 }}]</a>
+  {%- endif -%}
+{%- endfor -%}

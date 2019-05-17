@@ -1,0 +1,42 @@
+{%- comment -%}
+Add a reference
+
+Mandatory parameter:
+ - id: the id for citing
+
+Optional parameters:
+ - author: reference author
+ - title: reference title
+ - url: reference URL
+ - year: year of publication
+ - journal: journal or conference where reference was publicated
+ - volume: volume of journal
+ - publisher: reference publisher
+ - pages: pages in (e.g.) journal where you can find the (e.g.) article
+{%- endcomment -%}
+
+{%- if _bib_list == nil -%}
+{%- comment -%} Workaround for creating an array, since Liquid is awful {%- endcomment -%}
+  {%- assign _bib_list = "" | split: ' ' -%}
+{%- endif -%}
+
+{%- comment -%} _bib_ids "simulates" a hash, since Liquid is awful and doesn't have hash tables {%- endcomment -%}
+{%- if _bib_ids == nil -%}
+  {%- assign _bib_ids = "" | split: ' ' -%}
+{%- endif -%}
+
+{%- assign _bib_ids = _bib_ids | push: include.id -%}
+
+{%- capture _bib_b -%}
+  {%- if include.author -%} {{ include.author }}.&nbsp; {%- endif -%}
+  {%- if include.title -%} "{{ include.title }}".&nbsp; {%- endif -%}
+  {%- if include.journal -%} In <i>{{ include.journal }}.</i>&nbsp; {%- endif -%}
+  {%- if include.year -%} ({{ include.year }})&nbsp; {%- endif -%}
+  {%- if include.volume -%} Vol. {{ include.volume }}&nbsp; {%- endif -%}
+  {%- if include.publisher -%} {{ include.publisher }}.&nbsp; {%- endif -%}
+  {%- if include.pages -%} Pages {{ include.pages }}.&nbsp; {%- endif -%}
+  {%- if include.url -%} URL: <a href="{{ include.url }}">{{ include.url }}</a>.&nbsp; {%- endif -%}
+  <big><big><big><a href="#cite-{{ include.id }}-back">&#10548;</a></big></big></big>
+{%- endcapture -%}
+
+{%- assign _bib_list = _bib_list | push: _bib_b -%}
