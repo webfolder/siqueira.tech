@@ -33,7 +33,7 @@ to remember a specific command.**
 &rarr; Compile `iio_dummy`:
 
 ```bash
-make M=driver/iio/dummy
+make M=drivers/iio/dummy
 ```
 
 &rarr; Install module:

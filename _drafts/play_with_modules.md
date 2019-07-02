@@ -43,7 +43,7 @@ remember a specific command.
 
 ```bash
 make modules
-make M=driver/<TARGET_DRIVER>
+make M=drivers/<TARGET_DRIVER>
 sudo make modules_install
 modinfo <DRIVER_NAME>
 lsmod | grep <DRIVER_NAME>
@@ -96,7 +96,7 @@ Note that only `make` works, too. Sometimes, we just want to compile and clean
 a single module. To do this, I found out the following command:
 
 ```bash
-make M=driver/iio/dummy
+make M=drivers/iio/dummy
 ```
 
 The parameter `M` expects a path to the target driver. This allows you to
@@ -104,7 +104,7 @@ compile and clean a target module without touching other drivers. For example,
 try:
 
 ```bash
-make M=driver/iio/dummy clean
+make M=drivers/iio/dummy clean
 ```
 
 This command has a small trick: your module must be enabled in the .config

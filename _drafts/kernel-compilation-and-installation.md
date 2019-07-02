@@ -1,6 +1,5 @@
 ---
 layout: post
-categories: others
 title:  "Kernel Compilation and Installation"
 date:   2019-02-16
 author: siqueira
