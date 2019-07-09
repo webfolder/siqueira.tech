@@ -1,5 +1,5 @@
 ---
-title: Research
-layout: under_construction
-permalink: /research/
+title: Misceleneous
+layout: misceleneous
+permalink: /misceleneous/
 ---

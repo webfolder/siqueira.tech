@@ -2,7 +2,7 @@
 layout: post
 title:  "An attempt to create a local Kernel community"
 date:   2018-11-19
-categories: report
+categories: misceleneous
 published: true
 ---
 

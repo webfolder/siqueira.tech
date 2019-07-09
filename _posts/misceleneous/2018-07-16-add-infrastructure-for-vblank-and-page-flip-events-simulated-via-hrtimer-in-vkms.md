@@ -2,7 +2,7 @@
 layout: post
 title:  "Add infrastructure for Vblank and page flip events in vkms simulated by hrtimer"
 date:   2018-07-16
-categories: report
+categories: misceleneous
 published: true
 ---
 
