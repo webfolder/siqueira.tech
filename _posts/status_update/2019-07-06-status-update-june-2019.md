@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Status Update, June 2019"
-date:   2019-07-01
+date:   2019-07-09
 categories: status_update
 published: true
 ---
@@ -42,13 +42,15 @@ published: true
     title="Add support for testing writeback connectors"
     url="https://patchwork.freedesktop.org/series/39229/" %}
 
+
 For a long time, I'm cultivating the desire of getting the habit of writing
-monthly status update; in some way, Drew DeVault's Blog posts and Marteen Peres
-advice leverage me toward this direction. So, here I'm am! I decided to embrace
-the challenge of composing a report per month. I hope this new habit helps me
-to improve my write, summary, and communication skills; but most importantly,
-help me to keep track of my work. I want to start this update by describing my
-work conditions and then focus on the technical stuff.
+monthly status update; in some way, [Drew DeVault's Blog posts](https://drewdevault.com/)
+and [Martin Peres](http://mupuf.org/blog/authors/mupuf/) advice leverage me
+toward this direction. So, here I'm am! I decided to embrace the challenge of
+composing a report per month. I hope this new habit helps me to improve my
+write, summary, and communication skills; but most importantly, help me to keep
+track of my work. I want to start this update by describing my work conditions
+and then focus on the technical stuff.
 
 The last two months, I have to face an infrastructure problem to work. I'm
 dealing with obstacles such as restricted Internet access and long hours in
@@ -140,7 +142,14 @@ related to computer graphics.
 I want to put some effort to improve a tool named
 [kw](https://github.com/rodrigosiqueira/kworkflow) that help me during my work
 with Linux Kernel. I also want to take a look at real overlay planes support in
-vkms. Finally, and most importantly, I want to take some days off to enjoy my
-family.
+vkms. I noted that I have to find a "contribution protocol" (review/write code)
+that works for me in my current work conditions; otherwise, work will become
+painful for my relatives and me. Finally, and most importantly, I want to take
+some days off to enjoy my family.
+
+**Info:**
+If you find any problem with this text, please let me know. I will be glad to
+fix it.
+{: .info}
 
 {% include print_bib.html %}
