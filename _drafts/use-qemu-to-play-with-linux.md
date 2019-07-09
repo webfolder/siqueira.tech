@@ -91,7 +91,7 @@ Finally, take a careful look at Figure 1 in order to get an overview of the
 adopted workflow for this tutorial.
 
 {% include image-post.html
-  path="posts/linux_kernel_basic/guest_host.png"
+  src="posts/linux_kernel_basic/guest_host.png"
   style="width: 50%"
   caption="Workflow" %}
 
