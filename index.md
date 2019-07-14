@@ -1,12 +1,9 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
 
+### Notice
 
-**Notice:**
 The opinions expressed on this site are mine alone and do not necessarily
 reflect the opinions or strategies of any organization that I am related on.
 {: .warning}
@@ -14,6 +11,11 @@ reflect the opinions or strategies of any organization that I am related on.
 <a href="{{ site.url }}/feed.xml">
   <img src="{{ site.baseurl }}/images/icons/feed_a2c.png" style="float:left;padding:5px">
     RSS Feed
+</a>
+
+<a href="https://twitter.com/siqueirajordao">
+  <img src="{{ site.baseurl }}/images/icons/twitter.png" style="float:left;padding:5px">
+    Twitter
 </a>
 
 ## About this logbook (site/blog)
