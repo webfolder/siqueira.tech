@@ -24,6 +24,7 @@ as Figure 1 describes.
 
 {% include image-post.html
   src="posts/tdd-drm.png"
+  no-anchor="true"
   caption="My work cycle in VKMS" %}
 
 Firstly, I focused only on the subtest  "basic-plain-flip" from IGT and after

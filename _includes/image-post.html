@@ -5,30 +5,37 @@ Mandatory parameter:
  - src: the img relative path from img/posts/tutorials/<post-sub-category>/<post-name>
 
 Optional parameters:
+ - no-anchor: When true, the image will not become an anchor
  - absolute: When true, the img path is absolute
  - caption: Img caption
  - no-center: When true, won't align image to center
  - style: any additional css rules
  - class: any aditional css classes to be used
- - url: URL to make image an anchor
+ - url: URL to make image an anchor to
 {%- endcomment -%}
 
 {% capture fig_img %}
   {{ site.url }}/images/{{ include.src }}
 {% endcapture %}
 
-<figure>
 {% if include.url %}
-  <a href="{{ include.url }}">
+  {% assign url = include.url %}
+{% else %}
+  {% assign url = fig_img %}
 {% endif %}
+
+<figure>
+{% unless include.no-anchor %}
+  <a href="{{ url }}">
+{% endunless %}
 <img {% unless include.no-center %} class="img-center" {% endunless %}
      src="{{ fig_img }}"
      {% if include.caption %} alt="{{ include.caption }}" {% endif %}
      {% if include.style %} style="{{ include.style }}" {% endif %}
      {% if include.class %} class="{{ include.class }}" {% endif %}/>
-{% if include.url %}
+{% unless include.no-anchor %}
 </a>
-{% endif %}
+{%- endunless -%}
 {% if include.caption %}
   {% if counter == nil %}
     {% assign counter = 1 %}
