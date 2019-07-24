@@ -1,0 +1,5 @@
+https://arthurmde.me/en/feed.xml
+https://chaws.me/feed.xml
+https://drewdevault.com/feed.xml
+https://emersion.fr/blog/rss.xml
+https://flusp.ime.usp.br/feed.xml
