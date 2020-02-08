@@ -85,15 +85,21 @@ With the above verification we can go ahead and call some of the `libdrm`.
 
 # Get all DRM devices available in the system
 
-`libdrm` provide a powerful function that allow us to retrieve all information about all devices:
+`libdrm` provide a powerful function that allow us to retrieve a lot of information about all the available devices:
 
 ```
 drm_public int drmGetDevices(drmDevicePtr devices[], int max_devices)
 ```
 
+This function expects two parameters:
+1. **devices[]**: this parameter expects an array of `drmDevicePtr` which will be populate inside `drmGetDevices()`; each element in the array has the device information. If you want to check the total of devices first, you can set this parameter as NULL and the function will give you the total number of devices available in your system.
+2. **max_devices**: Total of device information that you want to retrieve.
 
+For trying to illustrate the use of this function in a real code, take a look at the below code snippet:
 
 ```
+drmDevicePtr dev[MAX_CARDS_SUPPORTED];
+[..]
 total_dev = drmGetDevices(dev, MAX_CARDS_SUPPORTED);
 if (total_dev < 0) {
         printf("Error: drmGetDevices: %s\n", strerror(total_dev));
@@ -101,5 +107,139 @@ if (total_dev < 0) {
 }
 printf("\t2. Total of devices available in your system: %d\n", total_dev);
 ```
+
+For trying to better understand the value of this function, let's take a look at `_drmDevice` struct:
+
+```
+typedef struct _drmDevice {
+    char **nodes;
+    int available_nodes;
+    int bustype;
+    union {
+        drmPciBusInfoPtr pci;
+        drmUsbBusInfoPtr usb;
+        drmPlatformBusInfoPtr platform;
+        drmHost1xBusInfoPtr host1x;
+    } businfo;
+    union {
+        drmPciDeviceInfoPtr pci;
+        drmUsbDeviceInfoPtr usb;
+        drmPlatformDeviceInfoPtr platform;
+        drmHost1xDeviceInfoPtr host1x;
+    } deviceinfo;
+} drmDevice, *drmDevicePtr;
+```
+
+The first interesting parameter it is the `bustype`, which can be:
+
+* `DRM_BUS_PCI`: Your device uses PCI bus;
+* `DRM_BUS_USB`: TODO
+* `DRM_BUS_PLATFORM`: TODO
+* `DRM_BUS_HOST1X`: TODO
+
+You need to know witch bus your system is using in order to retrieve the correct data from the subsequent fields in `_drmDevice`. For the sake of simplicity, let's suppose that your system uses PCI and based on that we can take a look at `drmPciBusInfoPtr`:
+
+```
+typedef struct _drmPciBusInfo {
+    uint16_t domain;
+    uint8_t bus;
+    uint8_t dev;
+    uint8_t func;
+} drmPciBusInfo, *drmPciBusInfoPtr;$
+```
+
+In summary, the above struct keeps the PCI information about the device bus. We can also take the device information, by retrieve the data in the `deviceinfo` field from `_drmDevice`; this field provide the following information:
+
+```
+typedef struct _drmPciDeviceInfo {
+    uint16_t vendor_id;
+    uint16_t device_id;
+    uint16_t subvendor_id;
+    uint16_t subdevice_id;
+    uint8_t revision_id;
+} drmPciDeviceInfo, *drmPciDeviceInfoPtr;
+```
+
+Note that we can capture a lot of vendor specific information such as the vendor id. Ok, after take a look on all of these data let's take a look on how our sample code should looks like now:
+
+```
+printf("\t 2.1 Device details\n");
+for (int i = 0; i < total_dev; i++) {
+        printf("\t\t Device: %d\n", i);
+
+        if (dev[i]->bustype == DRM_BUS_PCI) {
+                printf("\t\t PCI BUS:\n");
+                printf("\t\t  Bus info\n");
+                printf("\t\t  domain: %04x\n", dev[i]->businfo.pci->domain);
+                printf("\t\t  bus: %02x\n", dev[i]->businfo.pci->bus);
+                printf("\t\t  function: %01x\n", dev[i]->businfo.pci->func);
+                printf("\t\t Device Info\n");
+                printf("\t\t  vendor_id: %04x\n", dev[i]->deviceinfo.pci->vendor_id);
+                printf("\t\t  device_id: %04x\n", dev[i]->deviceinfo.pci->device_id);
+                printf("\t\t  subvendor_id: %04x\n", dev[i]->deviceinfo.pci->subvendor_id);
+                printf("\t\t  subdevice_id: %04x\n", dev[i]->deviceinfo.pci->subdevice_id);
+                printf("\t\t  revision_id: %02x\n", dev[i]->deviceinfo.pci->revision_id);
+        }
+}
+
+drmFreeDevices(dev, total_dev);
+```
+
+Just notice that we have to free the list of devices when we finish with it.
+
+# Get Version Information
+
+Now it is time to open our device and explore a little bit more about the version information associated to it. Our first step, should be open the device which is straightforward:
+
+```
+fd = open("/dev/card0", O_RDWR | O_NONBLOCK);
+if (fd < 0) {
+  printf("WARN: Something went wrong when we tried to open %s\n", path);
+  continue;
+}
+```
+
+Now that we have the file descriptor, we can use:
+
+```
+drm_public drmVersionPtr drmGetVersion(int fd)
+```
+
+This function expects a valid file descriptor and returns a `drmVersionPtr` if everything ends well. Take a look on `drmVersionPtr`:
+
+```
+typedef struct _drmVersion {
+    int     version_major;
+    int     version_minor;
+    int     version_patchlevel;
+    int     name_len;
+    char    *name;
+    int     date_len;
+    char    *date;
+    int     desc_len;
+    char    *desc;
+} drmVersion, *drmVersionPtr;
+```
+
+All the field described in the `_drmVersion` struct describes the hardware information, I believe that is not required to explain each field since their names make their meaning evident. Now, we can print the version information with the below code:
+
+```
+version = drmGetVersion(fd[i]);
+if (!version) {
+        printf("WARN: We could not retrieve device version\n");
+        goto clean;
+}
+
+printf("\t\t Major and Minor version: %d:%d\n", version->version_major, version->version_minor);$
+printf("\t\t Name: %s\n", version->name);
+printf("\t\t Date: %s\n", version->date);
+printf("\t\t Description: %s\n", version->desc);
+
+drmFreeVersion(version);
+```
+
+# Conclusion
+
+At this post intention was make you a little bit more familiar with `libdrm`, however, we barely scratch the its surface. For the next post we will keep our focus on getting system information via `libdrm`, but more focused on the Direct Rendering Management (DRM) elements.
 
 {% include print_bib.html %}
