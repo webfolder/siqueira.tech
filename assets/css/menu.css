@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom-style: solid;
+  border-color: #E3E0CF;
+  border-width: 2px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu li {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.menu li a {
+  color: #3B3A36;
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu li:hover a#home_logo {
+  border-top: none;
+}
+
+.menu li a img {
+  max-width: 100%;
+  min-width: 50%;
+  display: block;
+}
+
+.menu li a:hover {
+  color: #9FA8A3;
+  border-top: solid;
+  border-width: 3px;
+}

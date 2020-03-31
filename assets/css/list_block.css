@@ -1,0 +1,17 @@
+.list-items-flex {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.list-items-flex > div {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.list-items-flex > img {
+  max-width: 100%;
+  display: block;
+}
+
