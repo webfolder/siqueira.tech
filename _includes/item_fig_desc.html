@@ -10,15 +10,9 @@ Parameters:
 
 {%- endcomment -%}
 
-<div class="responsive">
-  <div class="gallery">
-  {% if include.item_modal.size > 0  %}
-    <a class="button" alt="{{ include.item_icon_alt }}" data-modal="{{ include.item_modal }}">
-  {% else %}
-    <a href="{{ include.item_link }}" alt="{{ include.item_icon_alt }}">
-  {%- endif -%}
-        <img src="{{ include.item_icon_path }}" align="middle">
-        <div class="desc">{{ include.item_desc }}</div>
-    </a>
-  </div>
+<div>
+  <a href="{{ include.item_link }}" alt="{{ include.item_icon_alt }}">
+    <img src="{{ include.item_icon_path }}">
+    <p>{{ include.item_desc }}</p>
+  </a>
 </div>
