@@ -116,6 +116,14 @@ sudo make headers_install INSTALL_HDR_PATH=/usr
 sudo make install
 ```
 
+&rarr; Cleanup:
+
+```bash
+make clean
+make mrproper
+make distclean
+```
+
 &rarr; Remove:
 
 ```bash
@@ -539,6 +547,33 @@ options in your Grub as Figure below illustrates.
 {% include image-post.html
    src="posts/linux_kernel_basic/grub_vm.png"
    caption="Grub menu options"%}
+
+## Cleanup
+
+Sometimes when you are debugging any Kernel issue, you may want to clean your
+compilation directory to make sure that everything worked as expected or maybe
+you just want to get back some extra disk space. Linux Kernel, provide three
+levels of cleanup for developers, from the Makefile we can highlight these
+three levels:
+
+1. Delete almost all generated files, but leave a few files for build external
+   modules.
+
+```
+make clean
+```
+
+2. Delete `.config` file and all generated files.
+
+```
+make mrproper
+```
+
+3. Remove editor backup, leftover patches, and other related files.
+
+```
+make distclean
+```
 
 ## Remove
 
