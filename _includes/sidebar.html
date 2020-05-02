@@ -1,0 +1,7 @@
+{% for page in site.pages %}
+  {% if page.categories contains 'sidebar' %}
+    <div class="sidebar">
+      {{ page.content | markdownify }}
+    </div>
+  {% endif %}
+{% endfor %}
