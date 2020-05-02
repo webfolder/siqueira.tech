@@ -1,6 +1,41 @@
-body, p {
+body {
   margin: 0px;
   padding: 0px;
+  font-family: LiberationMonoRegular;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-gap: 20px;
+  max-width: 960px;
+  padding: 10;
+  margin: 0 auto;
+}
+
+.container .content {
+  grid-column-start: 1;
   font-size: 1.2rem;
-  font-family: Arial;
+}
+
+.container .sidebar {
+  grid-column-start: 2;
+}
+
+@media screen and (max-width : 760px) {
+  .container {
+    display: block;
+    width: 100%;
+    padding: 10;
+  }
+
+  .container .content {
+    font-size: 1.2rem;
+  }
+
+  .container .sidebar {
+    border-top-style: solid;
+    border-color: #E3E0CF;
+    border-width: 2px;
+  }
 }
