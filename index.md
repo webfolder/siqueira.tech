@@ -2,12 +2,11 @@
 layout: home
 ---
 
-### Notice
-The opinions expressed on this site are mine alone and do not necessarily
+__Notice__: The opinions expressed on this site are mine alone and do not necessarily
 reflect the opinions or strategies of any organization that I am related on.
 In addition, unless stated otherwise, articles and images are released under a
 Creative Commons Sharealike License.
-{: .warning}
+{: .warning-box}
 
 <a href="{{ site.url }}/feed.xml">
   <img src="{{ site.baseurl }}/images/icons/feed_a2c.png" style="float:left;padding:5px">
