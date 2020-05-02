@@ -1,0 +1,47 @@
+/* Social media share */
+.share {
+  display: inline-block;
+  padding: 0.3em 0.5em;
+  font-size: 0.8em;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.share-twitter {
+  background-color: #55acee;
+}
+
+.share-facebook {
+  background-color: #3b5998;
+}
+
+.share-google-plus {
+  background-color: #dc4e41;
+}
+
+/* Info boxes */
+.info-box, .success-box, .warning-box, .error-box {
+    border: 0.1rem solid gray;
+    border-left: 0.6rem solid gray;
+    padding: 1.0rem;
+    border-radius: 0.5rem;
+}
+ 
+.warning-box {
+    border-color: #d6b84d;
+}
+ 
+.success-box {
+    border-color: #2ea282;
+}
+
+.error-box {
+    border-color: red;
+}
