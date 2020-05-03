@@ -2,19 +2,17 @@
 categories: sidebar
 ---
 
-<img src="/images/logo.png">
+<img src="/images/freefall.png">
 
-Github
+Github: [rodrigosiqueira](https://github.com/rodrigosiqueira)
 
-[rodrigosiqueira](https://github.com/rodrigosiqueira)
+Freedesktop: [siqueira](https://gitlab.freedesktop.org/siqueira)
 
-Freedesktop
+pgp: [E2D67E8A2D668CC0](others/pgp.asc)
 
-[siqueira](https://gitlab.freedesktop.org/siqueira)
+[RSS Feed](https://siqueira.tech/feed.xml)
 
-pgp
-
-[E2D67E8A2D668CC0](others/pgp.asc)
+[Twitter](https://twitter.com/siqueirajordao)
 
 # Donate
 

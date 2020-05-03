@@ -8,16 +8,12 @@ layout: default
     <h1> {{ page.title }} </h1>
   {% endif %}
 
-  <div>
+  <div align="center">
     {% if page.date %}
       {{ page.date | date: '%d %b %Y' }}
     {% else %}
       &#x2756;
     {% endif %}
-  </div>
-
-  <div align="center">
-    {% include share.html %}
   </div>
 
     {{ content }}

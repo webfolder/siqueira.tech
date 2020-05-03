@@ -4,6 +4,10 @@ body {
   font-family: LiberationMonoRegular;
 }
 
+h1 {
+	text-align: center;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 200px;
@@ -11,6 +15,12 @@ body {
   max-width: 960px;
   padding: 10;
   margin: 0 auto;
+}
+
+.container a {
+  color: #399f62;
+  text-decoration: none;
+  border-bottom: 1px dotted #72cc96;
 }
 
 .container .content {

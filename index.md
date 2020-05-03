@@ -8,16 +8,6 @@ In addition, unless stated otherwise, articles and images are released under a
 Creative Commons Sharealike License.
 {: .warning-box}
 
-<a href="{{ site.url }}/feed.xml">
-  <img src="{{ site.baseurl }}/images/icons/feed_a2c.png" style="float:left;padding:5px">
-    RSS Feed
-</a>
-
-<a href="https://twitter.com/siqueirajordao">
-  <img src="{{ site.baseurl }}/images/icons/twitter.png" style="float:left;padding:5px">
-    Twitter
-</a>
-
 ## About this logbook (site/blog)
 
 A logbook is a recorded book that has details of a trip made by a ship or
