@@ -1,48 +1,49 @@
 ---
 layout: default
 ---
+<div>
+  <div class="inner-post content">
+    {{ content }}
+  </div>
 
-    <div class="inner-post content">
-      {{ content }}
-    </div>
+  <hr>
+  <ul class="posts-list">
+    {%- capture page_name -%}
+      {{ page.name }}
+    {%- endcapture -%}
 
-    <div class="center-list-items">
+    {%- for page in site.pages -%}
+      {% if page.categories contains page_name %}
 
-      {%- capture page_name -%}
-        {{ page.name }}
-      {%- endcapture -%}
+        {%- capture page_item_link -%}
+          {{ site.url }}/{{ page.ref }}
+        {%- endcapture -%}
 
-      {%- for page in site.pages -%}
-        {% if page.categories contains page_name %}
+        {%- capture page_item_title -%}
+          {{ page.title }}
+        {%- endcapture -%}
 
-          {%- capture page_item_link -%}
-            {{ site.url }}/{{ page.ref }}
-          {%- endcapture -%}
+        {%- capture page_item_link -%}
+          {{ site.url }}/{{ page.ref }}
+        {%- endcapture -%}
 
-          {%- capture page_item_title -%}
-            {{ page.title }}
-          {%- endcapture -%}
+        {%- capture page_item_icon_alt -%}
+          Abstract to concrete
+        {%- endcapture -%}
 
-          {%- capture page_item_link -%}
-            {{ site.url }}/{{ page.ref }}
-          {%- endcapture -%}
+        {%- capture page_item_icon_path -%}
+          {{ site.url }}/images/icons/{{ page.image }}.png
+        {%- endcapture -%}
 
-          {%- capture page_item_icon_alt -%}
-            Abstract to concrete
-          {%- endcapture -%}
+      <li>
+        <h2>
+          <a href="{{ page_item_link }}" class="post-title">
+            <span>{{ page_item_title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+          </a>
+        </h2>
+      </li>
 
-          {%- capture page_item_icon_path -%}
-            {{ site.url }}/images/icons/{{ page.image }}.png
-          {%- endcapture -%}
-
-          {%- include item_fig_desc.html
-            item_link=page_item_link
-            item_icon_alt=page_item_icon_alt
-            item_icon_path=page_item_icon_path
-            item_desc=page_item_title
-            item_modal=page_modals -%}
-
-        {% endif %}
-      {%- endfor -%}
-      <div class="clearfix"></div>
-    </div>
+      {% endif %}
+    {%- endfor -%}
+  </ul>
+</div>
