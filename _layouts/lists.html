@@ -2,21 +2,18 @@
 layout: default
 permalink: /categories/
 ---
+<div>
+  {% if page.title %}
+    <h1> {{ page.title }} </h1>
+  {% endif %}
 
-<div class="list-content-box">
-  <hr>
-  <ul class="posts-list">
-    {% for post in site.posts %}
-      {% if post.categories contains page.filter_by %}
-        <li>
-          <h2>
-              <a href="{{ site.url }}{{ post.url }}" class="post-title">
-              <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-            </a>
-            <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
-          </h2>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  <div class="list-content-box">
+    <ul class="posts-list">
+      {% for post in site.posts %}
+        {% if post.categories contains page.filter_by %}
+          {% include post_list.html %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </div>
