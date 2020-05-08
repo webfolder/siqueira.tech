@@ -89,7 +89,7 @@ explained to me, it is the use of `podman` (https://podman.io/) for prepare IGT
 image, for example, after a few minutes of code pair with him I could run IGT
 on my machine after executing the following commands:
 
-```
+```bash
 sudo su
 podman run --privileged registry.freedesktop.org/drm/igt-gpu-tools/igt:master
 podman run --privileged registry.freedesktop.org/drm/igt-gpu-tools/igt:master \
