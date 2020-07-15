@@ -5,11 +5,9 @@ div.highlighter-rouge, figure.highlight {
   color: #666;
   font-family: monospace;
   font-size: 1.2rem;
-  line-height: 1.2;
-  max-width: 100%;
-  overflow: auto;
+  max-width: 900px;
+  overflow-x: overlay;
   display: block;
-  word-wrap: break-word;
 }
 
 pre.highlight {

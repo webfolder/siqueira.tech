@@ -32,7 +32,7 @@ a.share {
 }
 
 /* Info boxes */
-.info-box, .success-box, .warning-box, .error-box {
+.info-box, .success-box, .warning-box, .error-box, .definition-box {
     border: 0.1rem solid gray;
     border-left: 0.6rem solid gray;
     padding: 1.0rem;
@@ -49,4 +49,8 @@ a.share {
 
 .error-box {
     border-color: red;
+}
+
+.definition-box {
+    border-color: green;
 }
