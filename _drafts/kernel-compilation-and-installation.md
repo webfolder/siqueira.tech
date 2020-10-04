@@ -352,7 +352,7 @@ make localmodconfig
 Before executing `make localmodconfig`, plug-in all the device that you usually
 use to get them enabled in the `.config`. However, these plug-in steps are only
 required if you are in your host machine; you do not need to care about this in
-your VM, just execute the command.
+your VM, just execute the command. Also, if you followed the "TUTORIAL" you set up automount which require autofs enabled, go to your config file and make sure that the option AUTOFS_FS and CIFS set; if not, enable it via `nconfig`/
 {: .notice_info}
 
 Sometimes, when you rebase your local branch with the upstream and start the

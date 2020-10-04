@@ -125,7 +125,6 @@ CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
 ...
 ```
 
-
 ### Type of backtrace problem
 
 We have different types of backlog, usually, you can identify it in the first part of the log below `[cut here]` string. The most common set of errors are:
@@ -182,3 +181,32 @@ either the address is not part of the call chain: it’s just stale values on th
 or it is part of the call chain, but the frame pointer was not set up properly within the function, so we don’t recognize it.
 
 This way we will always print out the real call chain (plus a few more entries), regardless of whether the frame pointer was set up correctly or not - but in most cases we’ll get the call chain right as well. The entries printed are strictly in stack order, so you can deduce more information from that as well.
+
+# DRM
+
+## Enable extra log in the dmesg
+
+By default, dmesg show just a limited amount which make increase the debug challenge. However, dmesg allows you to enable extra log message by changing the value in the file `/sys/module/drm/parameters/debug`; we have four useful options:
+
+1. You can enable every sort of log message by setting `0xff`, but keep in mind that you going to see thousands of messages. For enabling it just use:
+```
+echo 0xff > /sys/module/drm/parameters/debug
+```
+
+2. For enabling only DRM/KMS logs, you can use:
+
+```
+echo 0x02 > /sys/module/drm/parameters/debug
+```
+
+3. You can set `0x04` for enabling more logs:
+
+```
+echo 0x04 > /sys/module/drm/parameters/debug
+```
+
+4. Finally, you can reset to the default by using:
+
+```
+echo 0 > /sys/module/drm/parameters/debug
+```

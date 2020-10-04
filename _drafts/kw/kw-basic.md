@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "kw a tool for supporting kernel developers"
+title: "kw: a tool for supporting kernel developers"
 date: 2019-11-24
 published: true
 categories: "linux-kernel-basic"
@@ -34,9 +34,9 @@ to remember a specific command.**
 ```bash
 kw version
 kw init
-kw c PATH/TO/[FILE|DIRECTORY]
-kw m PATH/TO/[FILE|DIRECTORY]
-kw e "STRING" /PATH/TO
+kw c PATH/TO/[FILE|DIRECTORY] # or kw codestyle PATH/TO/[FILE|DIRECTORY]
+kw m PATH/TO/[FILE|DIRECTORY] # or kw maintainers PATH/TO/[FILE|DIRECTORY]
+kw e "STRING" /PATH/TO # or kw explore "STRING" /PATH/TO
 kw vars # or kw v
 ```
 
@@ -46,13 +46,14 @@ kw vars # or kw v
 kernel developers by automating some of their daily tasks. `kw` currently
 support:
 
-1. Handle kernel code style;
-2. Handle Kernel maintainers;
-3. Manage `.config` files;
-4. Support with ssh command;
-5. Manage build;
-6. Operate deploys of new kernel or module version;
-7. Handle QEMU virtual machine.
+1. Handle kernel code style and maintainers;
+2. Manage `.config` files;
+3. Support with ssh command;
+4. Build management;
+5. Operate deploys of new kernel or module version;
+6. Handle QEMU virtual machine;
+7. Generate usage statistics;
+8. Support basic drm features.
 
 We have plans to add other functionalities, for example, we want to add support
 for maintainers tasks (inspired by `dim`). Additionally, if our community
@@ -60,17 +61,16 @@ grows, we want to support a large variate of distros and bootloaders.
 
 # Why I started it?
 
-I started my career as a Kernel developer in 2018, during my preparation for
-applying to Google Summer of Code (GSoC). At that moment, I was learning the
-basic stuff such as compile and install a new kernel version in a target
+Back to 2018 I was preparing for
+applying to Google Summer of Code (GSoC). At that moment, I was learning
+basic stuff such as how to compile and install a new kernel version in a target
 machine; after I repeated these tasks dozens of time, I naturally started to
-write some simple shell scripts targeting these repeatable tasks. After I got
+write some simple shell scripts for automating these repeatable tasks. After I got
 accepted in the GSoC program, [Gustava Padovan](https://padovan.org/) (one of
-my mentors) introduced me to his set of [scripts for
-working](https://github.com/padovan/scripts) with the kernel. After use
-Padovan's scripts, I started to improve it by fix bugs and add new
+my mentors) introduced me to his set of [scripts for working](https://github.com/padovan/scripts) with the kernel. After use
+Padovan's scripts, I started to improve it by fixing bugs and adding new
 functionalities, later I decided to start a project that unifies other people's
-scripts in a single tool. I realize that many kernel developers create their
+scripts in a single tool. I did it, because I realize that many kernel developers create their
 own tool, so, why not put all of this together in a single tool and share
 maintenance effort?
 
@@ -81,7 +81,7 @@ spread it between students from my home university, as a result, most of the
 contributors came from the University of Sao Paulo (USP). In particular,
 [Matheus Tavares](https://matheustavares.gitlab.io/) started to contribute to
 `kw` during his graduation, and since that he kept advancing `kw` features;
-nowadays, he is a `kw` maintainer.
+nowadays, he is one of the `kw` maintainers.
 
 # Our philosophy
 
@@ -91,21 +91,20 @@ highlight that we got cultural and technical influence from `git` and Linux
 kernel community. For the sake of brevity, I'll list our `kw` philosophy:
 
 - We got inspiration on the way that `git` project organize their features, for
-  example, e try to imitate how `git` handle its commands;
+  example, we try to imitate how `git` handle its commands;
 - We embrace unit tests;
 - We embody document as a part of `kw` philosophy;
 - We try to keep the required dependencies to the minimum. We favor to adopt
   tools that can be easily found in most of the people environment;
 - We try our best to have a stable version of `kw`, however, we also keep a
-  bleeding-edge version in the unstable {% include cite.html id="kwbranches" %};
+  bleeding-edge version in the unstable branch {% include cite.html id="kwbranches" %};
 
 # How to install
 
 It is very simple to install `kw` from the repository, you just need to follow
 these steps:
 
-0. You will need to install the following dependencies (not all of them are
-   mandatory):
+0. If you use Debian or Arch system based, the setup script will handle the package dependencies. Anyway, the following software needs to be installed (not all of them are mandatory):
 
 ```bash
 libguestfs qemu bash git python-docutils paplay notify-send
@@ -135,14 +134,18 @@ source ~/.barshrc
 kw version
 ```
 
+If you want to use the latest version of kw, you need to change to the unstable branch and execute the `setup -i` command again.
+
 ## Kw files path
 
-`kw` will create some directories in your home, take a look at:
+`kw` will create a small set of directories in your home, take a look at:
 
 ```bash
-ls ~/.config/kw
-ls ~/.cache/kw
-ls ~/kw
+ls ~/.local/bin # kw executable
+ls ~/.local/lib/kw/ # kw main files
+ls ~/.local/lib/etc/ # kw global configuration
+ls ~/.local/share/ # other kw related files
+ls ~/.kw # kw data generated during its usage
 ```
 
 Take a few minutes to inspect all aforementioned directories for getting a
@@ -155,7 +158,7 @@ Inspired by `git` we use a global and local configuration file, you can see
 this configuration file in the directory:
 
 ```bash
-~/config/kw/etc/kworkflow.config
+~/.local/etc/kw/kworkflow.config
 ```
 
 Take a few minutes to read this file, it has comments for each parameter.
@@ -187,7 +190,7 @@ We have two mechanisms for uninstalling `kw`:
 
 The first approach is the recommended one, it removes all `kw` files and
 changes in your `.bashrc` but it still keeps some internal data managed by `kw`
-that you probably don't want to remove such as the `.config` files under `kw`
+that you probably don't want to remove such as all `.config` files under `kw`
 management. However, if you are really sure about clean everything use
 `--completely-remove` and be aware that all `kw` data going to be wiped out
 from your system.
@@ -196,7 +199,7 @@ If you want to update `kw` you just need to use:
 
 ```bash
 cd kworkflow
-git pull
+git pull # git checkout unstable
 ./setup -i
 ```
 
@@ -247,9 +250,9 @@ kw c drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm_crc.c
 
 When we have a patch for submitting to the community, we usually want to send
 it to the correct channels and maintainers for increasing the chance of getting
-a review. Linux Kernel provides a script named `get_maintainers`, `kw` added a
-wrapper for this tool to make them straightforwardly work with this script. For
-getting the maintainers information with `kw` try:
+a review. Linux Kernel provides a script named `get_maintainers` where `kw`
+added a wrapper for it in order to make its usage straightforwardly. For
+getting the maintainers information with `kw` you can use `maintainers` or `m` option; for example:
 
 ```bash
 kw maintainers PATH/TO/[FILE|DIR]
@@ -274,7 +277,7 @@ kw maintainers --authors drivers/gpu/drm/vkms/
 Search for string pattern in the Linux Kernel or in the git log are two common
 tasks, for this reason `kw` has a feature named `explore`. This feature
 supports string search based on patterns; under the hood, the explore feature
-is a wrapper for `git grep`, see the example below on how to use this option:
+is a wrapper for `git grep` and `gnu grep`, see the example below on how to use this option:
 
 ```bash
 kw explore "STRING" # or
@@ -320,7 +323,7 @@ TODO
 
 ## Conclusion
 
-Here I introduced the basic features available by `kw` and an overview on how
+Here I introduced a very basic set of features provided by `kw` and an overview on how
 to use them; keep in mind that we still need to polish many of the features
-described here, for this reason patch and bug report are very welcome. In the
+described here, thus patch and bug report are very welcome. In the
 next post, we will explore other features that deserve some extra attention.

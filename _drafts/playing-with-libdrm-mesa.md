@@ -36,6 +36,11 @@ categories: "others"
     date="2020-07-19"
     url="https://docs.mesa3d.org/install.html#requirements" %}
 
+{% include add_ref.html id="compilingmesa"
+    title="Mesa Requirements"
+    date="2013-03-24"
+    url="https://people.freedesktop.org/~mslusarz/nouveau-wiki-dump/CompilingMesa.html" %}
+
 In this post, I want to describe how to compile and use Mesa3D, if you work in
 any layer of Linux Graphic stack this sort of knowledge may be really handy.
 
@@ -104,9 +109,9 @@ suggested{% include cite.html id="mesarequirementes" %}:
 Again, it varies for each person, in my case I had to install:
 
 ```
-libxxf86vm-dev libxshmfence-dev libxxf86vm-dev libxcb-present-dev
-libxcb-dri3-dev libxcb-dri2-0-dev libx11-xcb-dev libxcb-glx0-dev libxdamage-dev
-xdamage-dev libva-dev libomxil-bellagio-dev libvdpau-dev
+libxxf86vm-dev libxshmfence-dev libxxf86vm-dev libxcb-present-dev \
+libxcb-dri3-dev libxcb-dri2-0-dev libx11-xcb-dev libxcb-glx0-dev \
+libxdamage-dev libva-dev libomxil-bellagio-dev libvdpau-dev
 ```
 
 Alternatively, you can ignore all dependencies for a while and install them

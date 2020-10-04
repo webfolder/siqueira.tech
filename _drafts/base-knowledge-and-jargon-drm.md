@@ -288,6 +288,8 @@ When I read any code in the DRM or in the documentation, I constantly find a lot
 7. **IGP**: Integrated Graphics Processor
 8. **UMA**: Unified Memory Architecture
 9. **Sink**: Display
+10. **Stream**: 
+11. **Scanout**: 
 {: .notice_warning}
 
 ## Reference

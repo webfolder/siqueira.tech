@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Libdrm Introduction"
+title:  "Part 1: Libdrm Introduction"
 date:   2020-02-05
 categories: drm
 ---
