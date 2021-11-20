@@ -33,6 +33,9 @@ h1 {
   grid-column-start: 2;
 }
 
+.container .share-bottom {
+  margin: 15px 0px 15px 0px;
+}
 @media screen and (max-width : 760px) {
   .container {
     display: block;
