@@ -6,7 +6,7 @@ div.highlighter-rouge, figure.highlight {
   font-family: monospace;
   font-size: 1.2rem;
   max-width: 900px;
-  overflow-x: overlay;
+  overflow-x: auto;
   display: block;
 }
 
