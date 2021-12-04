@@ -10,11 +10,12 @@ h1 {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 80% auto;
   grid-gap: 20px;
   max-width: 960px;
   padding: 10;
   margin: 0 auto;
+  height: 96vh;
 }
 
 .container a {
@@ -27,10 +28,12 @@ h1 {
 .container .content {
   grid-column-start: 1;
   font-size: 1.2rem;
+  max-width: 960px;
 }
 
 .container .sidebar {
   grid-column-start: 2;
+  width: 190px;
 }
 
 .container .share-bottom {
