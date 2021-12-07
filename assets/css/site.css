@@ -52,7 +52,10 @@ h1 {
 
   .container .sidebar {
     border-top-style: solid;
+    height: 0;
+    width: 100%;
     border-color: #E3E0CF;
     border-width: 2px;
+    text-align: center;
   }
 }
