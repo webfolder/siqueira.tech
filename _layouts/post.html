@@ -4,10 +4,13 @@ layout: default
 
 <div class="content">
 
+  <div id="title" class="post">
   {% if page.title %}
     <h1> {{ page.title }} </h1>
   {% endif %}
+  </div>
 
+  <div id="date" class="post">
   <div align="center">
     {% if page.date %}
       {{ page.date | date: '%d %b %Y' }}
@@ -15,8 +18,11 @@ layout: default
       &#x2756;
     {% endif %}
   </div>
+  </div>
 
+  <div id="content" class="post">
     {{ content }}
+  </div>
 
   <hr>
 
