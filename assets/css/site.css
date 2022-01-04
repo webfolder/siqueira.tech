@@ -29,6 +29,10 @@ h1 {
   height: 96vh;
 }
 
+.container .img-center {
+  max-width: 100%;
+}
+
 .container a {
   color: #399f62;
   text-decoration: none;
