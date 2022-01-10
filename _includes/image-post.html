@@ -24,18 +24,33 @@ Optional parameters:
   {% assign url = fig_img %}
 {% endif %}
 
+{% if counter-id == nil %}
+  {% assign counter-id = 1 %}
+{% endif %}
 <figure>
-{% unless include.no-anchor %}
-  <a href="{{ url }}">
-{% endunless %}
-<img {% unless include.no-center %} class="img-center" {% endunless %}
-     src="{{ fig_img }}"
-     {% if include.caption %} alt="{{ include.caption }}" {% endif %}
-     {% if include.style %} style="{{ include.style }}" {% endif %}
-     {% if include.class %} class="{{ include.class }}" {% endif %}/>
-{% unless include.no-anchor %}
-</a>
-{%- endunless -%}
+  {% unless include.no-anchor %}
+    <a href="#image?={{ counter-id }}">
+  {% endunless %}
+  <img {% unless include.no-center %} class="img-center" {% endunless %}
+        src="{{ fig_img }}"
+        {% if include.caption %} alt="{{ include.caption }}" {% endif %}
+        {% if include.style %} style="{{ include.style }}" {% endif %}
+        {% if include.class %} class="{{ include.class }}" {% endif %}/>
+  <div class="popup-image" id="image?={{ counter-id }}">
+    <div class="popup-inner-frame">
+      <p>
+        <img {% unless include.no-center %} class="fig-center" {% endunless %}
+        srcset="{{ url }}">
+      </p>
+      <a href="#!" class="img-pop-up-button">x</a>
+      <a href="#!" class="img-pop-up-button-close-icon">x</a>
+    </div>
+  </div>
+  {% unless include.no-anchor %}
+  </a>
+  {%- endunless -%}
+{% assign counter-id = counter-id | plus: 1 %}
+
 {% if include.caption %}
   {% if counter == nil %}
     {% assign counter = 1 %}
