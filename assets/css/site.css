@@ -11,7 +11,7 @@ h1 {
 
 #content.post > p:not(.info-box):first-of-type::first-letter {
   font-size: 4.5rem;
-  color:darkslategrey;
+  color: #2f4f4f;
   padding-right: 8px;
   float: left;
   line-height: 0.6;
@@ -31,6 +31,10 @@ h1 {
 
 .container .img-center {
   max-width: 100%;
+}
+
+.container figure a {
+  border-bottom: none;
 }
 
 .container a {
@@ -54,6 +58,7 @@ h1 {
 .container .share-bottom {
   margin: 15px 0px 15px 0px;
 }
+
 @media screen and (max-width : 760px) {
   .container {
     display: block;
@@ -69,7 +74,7 @@ h1 {
     border-top-style: solid;
     height: 0;
     width: 100%;
-    border-color: #E3E0CF;
+    border-color: #e3e0Cf;
     border-width: 2px;
     text-align: center;
   }
