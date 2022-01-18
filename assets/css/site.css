@@ -29,6 +29,10 @@ h1 {
   height: 96vh;
 }
 
+.container figure {
+  text-align: center;
+}
+
 .container .img-center {
   max-width: 100%;
 }
