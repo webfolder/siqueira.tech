@@ -4,15 +4,17 @@ categories: sidebar
 
 <img src="/images/freefall.png">
 
-Github: [rodrigosiqueira](https://github.com/rodrigosiqueira)
+[Freedesktop](https://gitlab.freedesktop.org/siqueira)
 
-Freedesktop: [siqueira](https://gitlab.freedesktop.org/siqueira)
-
-pgp: [E2D67E8A2D668CC0](others/pgp.asc)
+[Github](https://github.com/rodrigosiqueira)
 
 [RSS Feed](https://siqueira.tech/feed.xml)
 
+[Mastodon](https://mastodon.social/web/@siqueirajordao)
+
 [Twitter](https://twitter.com/siqueirajordao)
+
+pgp: [E2D67E8A2D668CC0](others/pgp.asc)
 
 # License
 

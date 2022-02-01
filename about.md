@@ -8,26 +8,33 @@ permalink: /about/
   src="me2.png"
   style="float: left" %}
 
-I have a B.S in Software Engineering and M.S in Computer Science at the
-University of São Paulo. My research interests gravitate around OS, FLOSS, and
+I have a B.S in Software Engineering
+([University of Brasilia](https://international.unb.br/)) and an M.S in
+Computer Science ([University of São Paulo](https://www5.usp.br/)). My research
+interests gravitate around Operating Systems (OS), FLOSS, Graphics, and
 Software Engineering.
 
-I am passionate about Operating Systems (OS) field, for me, OS is one of the
-human most significant achievements. As a result, I am dedicating many hours of
-my life trying to understand this area and contributing to GNU/Linux. If you
-want to know more about me, please take a look at the bottom of this page.
+OS has a special place in my heart, which means I enjoy learning and teaching
+about this topic. As a result, I dedicated many hours of my life to
+understanding this area and contributing to GNU/Linux. If you want to know more
+about me, please take a look at the bottom of this page.
 
-Finally, all content, including presentations and pictures, is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International
-License](https://creativecommons.org/licenses/by-sa/4.0/). Website style based
-on [Halve](https://github.com/TaylanTatli/Halve). Full source of this blog is
-available on [github](https://github.com/webfolder/siqueira.tech).
+All content, including presentations and pictures on this webpage, is licensed
+under a [Creative Commons Attribution-ShareAlike 4.0 International
+License](https://creativecommons.org/licenses/by-sa/4.0/). This Website style
+was based on [Halve](https://github.com/TaylanTatli/Halve), and the whole
+source of this blog is available on
+[github](https://github.com/webfolder/siqueira.tech). Finally, all opinions
+expressed on this site are mine alone and do not necessarily reflect the views
+or strategies of any organization that I am associated with.
 
-## Other infos
+## Other Infos
 
-1. Email: rodrigosiqueiramelo AT SPAMFREE gmail DOT com
-2. IRC: siqueira (`#ccsl-usp@freenode` or `#dri-devel@freenode`)
-3. Gitlab: [rodrigosiqueira](https://gitlab.com/rodrigosiqueira?nav_source=navbar)
-3. Github: [rodrigosiqueira](https://github.com/rodrigosiqueira)
-4. Linkedin: [rodrigosiqueirajordao](https://www.linkedin.com/in/rodrigosiqueirajordao)
-5. Twitter: [@siqueirajordao](https://twitter.com/siqueirajordao)
+1. Email: siqueirajordao AT SPAMFREE riseup DOT net
+2. IRC: siqueira (`#dri-devel@oftc` or `#kworkflow@oftc`)
+3. Freedesktop Gitlab: <https://gitlab.freedesktop.org/siqueira>
+4. Gitlab: <https://gitlab.com/rodrigosiqueira>
+5. Github: <https://github.com/rodrigosiqueira>
+6. Linkedin: <https://www.linkedin.com/in/rodrigosiqueirajordao>
+7. Mastodon: [@siqueirajordao](https://mastodon.social/web/@siqueirajordao)
+8. Twitter: [@siqueirajordao](https://twitter.com/siqueirajordao)

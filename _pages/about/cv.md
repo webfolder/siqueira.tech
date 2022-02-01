@@ -15,6 +15,18 @@ community.
 ## Professional Background
 ---
 
+> **Senior Software Development Engineer (Since August 2019, Toronto, Canada)**
+
+At AMD, I'm working with the GPU open-source driver named amdgpu. This driver
+is composed of multiple components, and I have been working on the display
+elements directly (the KMS part inside the DRM subsystem). The AMD display code
+is shared with other OS, and as a result, it has multiple teams working in the
+same code base; as part of my contributions, I helped devise new tools and
+processes that fast and safely promote closed-source code to open-source. I
+also helped improve the code quality by expanding the tests for the driver at
+the kernel level (e.g., improve IGT). I also work fixing bugs, refactoring
+code, expanding documentation, and helping to support new features.
+
 > **Autonomous Linux Kernel Contributor (Since January 2018, São Paulo, Brazil)**
 
 I upstreamed over 30 commits to the Linux Kernel mainline, across different
@@ -58,15 +70,6 @@ entity-relationship structure of the database alongside with the architecture.
 I focused on creating a robust architecture, made possible by the use of the
 pertinent design patterns learned at school. At the end of the internship, I
 had to present the project for many engineers from other teams for evaluation.
-
-> **Web Developerat at AEG (September 2011 -- July 2012, Brasilia, Brazil)**
-
-AEG is a small company, which provides business consultancy to
-other businesses. When I worked for AEG, they needed a web system for handling
-their client's complaints and suggestions. In this sense, I was designated to
-create software for managing their requests. Firstly, I understood the
-requirements and then designed the architecture. I have created the system
-which uses MySQL 4.0, PHP 4.3, and running under Apache 2.3.
 
 ## Academic Background
 ---
