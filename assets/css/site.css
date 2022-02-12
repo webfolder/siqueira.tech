@@ -70,8 +70,17 @@ h1 {
     padding: 10;
   }
 
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .inner-post p {
+    display: inline-block;
+  }
+
   .container .content {
     font-size: 1.2rem;
+    margin: 0 13px 0 13px;
   }
 
   .container .sidebar {
