@@ -16,7 +16,8 @@ layout: default
     {%- for page in site.pages -%}
 
       {%- if page.categories contains page_name -%}
-
+      <ul class="simple-list-of-blocks-content">
+        <li>
         {%- capture page_item_link -%}
           {{ site.url }}/{{ page.ref }}
         {%- endcapture -%}
@@ -29,17 +30,19 @@ layout: default
           {{ site.url }}/images/icons/{{ page.image }}.png
         {%- endcapture -%}
 
-        {%- capture page_item_desc -%}
-          {{ page.title }}
-        {%- endcapture -%}
-
+          {%- capture page_item_desc -%}
+          <h3 class="simple-list-of-blocks-title">
+            {{ page.title }}
+          </h3>
+          {%- endcapture -%}
         {%- include item_fig_desc.html
           item_link=page_item_link
           item_icon_alt=page_item_icon_alt
           item_icon_path=page_item_icon_path
           item_desc=page_item_desc
           item_modal='' -%}
-
+        </li>
+      </ul>
       {%- endif -%}
     {%- endfor -%}
   </section>
