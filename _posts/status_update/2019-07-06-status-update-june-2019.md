@@ -2,7 +2,7 @@
 layout: post
 title:  "Status Update, June 2019"
 date:   2019-07-09
-categories: status_update
+categories: [status_update, freedesktop]
 published: true
 ---
 

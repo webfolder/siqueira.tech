@@ -42,3 +42,30 @@ About the arguments:
 1. --target: The element with itens in the _layouts. For example, development.html
 2. --name: The name of the new section
 3. --image: The name for the new section
+
+## About Feeds separate.
+
+### How feeds separate work
+
+The separation of feeds is performed to filter and organize the posts.
+
+The *feed.xml* file encompasses all posts without filtering any category, that
+is, it is the general feed of the site.
+
+The *feed-freedesktop.xml* file filters posts by the "freedesktop" category and
+creates a feed with only posts that have that category.
+
+
+### How to add a post to freedesktop feed
+
+To add a post to the freedesktop feed, simply include the "freedesktop"
+category in the front matter of the post.
+
+> Use:
+
+```
+---
+layout: post
+categories: freedesktop
+---
+```
