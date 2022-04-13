@@ -54,7 +54,20 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
+  - jekyll-paginate-v2
 
 # Exclude list
 include: [_pages]
 exclude: [README.md, Gemfile, Gemfile.lock, _site, src, vendor, CNAME, LICENSE, Rakefile, .sass-cache, .DS_Store]
+
+permalink: /:year-:month-:day-:title/
+
+pagination:
+  enabled: true
+  debug: false
+  per_page: 3
+  permalink: '/page/:num/'
+  title: ':title - Página :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true

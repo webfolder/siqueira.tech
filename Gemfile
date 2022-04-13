@@ -4,3 +4,4 @@ gem 'jekyll-sitemap'
 gem 'jekyll-feed'
 gem "jekyll-gist"
 gem 'github-pages'
+gem 'jekyll-paginate-v2'
