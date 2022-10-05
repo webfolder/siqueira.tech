@@ -9,9 +9,14 @@ permalink: /categories/
   {% endif %}
   <ul class="posts-list">
     {% for post in site.posts %}
+      <h1>{{ post.title }}</h1>
       {% if post.categories contains 'misceleneous' %}
+        {% for lala in paginator.posts %}
+          <h1>++{{ lala.title }}</h1>
+    {% endfor %}
         {% include post_list.html %}
       {% endif %}
     {% endfor %}
   </ul>
+  {% include pagination.html %}
 </div>
