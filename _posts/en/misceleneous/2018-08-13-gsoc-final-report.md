@@ -4,6 +4,7 @@ title:  "GSoC Final Report"
 date:   2018-08-13
 categories: [misceleneous, freedesktop]
 published: true
+lang: en
 ---
 
 Nothing lasts forever, and this also applies for GSoC projects. In this report,

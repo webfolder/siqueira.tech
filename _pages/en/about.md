@@ -2,6 +2,8 @@
 title: About
 layout: text_with_list_items
 permalink: /about/
+ref: about
+lang: en
 ---
 
 {% include image-post.html

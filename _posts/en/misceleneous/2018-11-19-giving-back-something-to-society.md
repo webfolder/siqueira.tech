@@ -4,6 +4,7 @@ title:  "An attempt to create a local Kernel community"
 date:   2018-11-19
 categories: [misceleneous, freedesktop]
 published: true
+lang: en
 ---
 
 Since the day I had my first class of Operating Systems (OS) in my engineering
