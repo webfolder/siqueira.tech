@@ -1,25 +1,8 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-#baseurl: "/Type-on-Strap"
 title: Siqueira
-email: rodrigosiqueiramelo@gmail.com
+email: siqueirajordao@riseup.net
 url: https://siqueira.tech
 logo: logo.png
 locale: en_US
-timezone: America/Sao_Paulo
 permalink: pretty
 description: "Logbooks are an unstructured text which we explain operations, and approaches taken by us to finish the work; in a nutshell, it is an analogy with navigation of a ship. I like this idea and continuously use it in my life, and this site represents a materialization of this concept."
 keywords: "kernel, development, bash, c, tutorial, documentation, report, siqueira"
@@ -35,25 +18,13 @@ kramdown:
   toc_levels:       1..6
   enable_coderay:   false
 
-sass:
-  style:            compressed
-
 collections:
   tutorial:
     output: true
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: development
-    values:
-      layout: development
 # Gems
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
 
 # Exclude list
 include: [_pages]
