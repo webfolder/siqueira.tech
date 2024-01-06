@@ -18,9 +18,24 @@ kramdown:
   toc_levels:       1..6
   enable_coderay:   false
 
+language_default: en
+
 collections:
-  tutorial:
+  en:
     output: true
+    permalink: /:collection/:slug
+
+defaults:
+- scope:
+    path: '_pages/en'
+    type: "pages"
+  values:
+    permalink: '/:slug'
+- scope:
+    path: "_posts/en"
+    type: "posts"
+  values:
+    permalink: '/:slug'
 
 # Gems
 plugins:
