@@ -63,6 +63,17 @@ h1 {
   margin: 15px 0px 15px 0px;
 }
 
+ul.lang {
+  list-style: none;
+  text-align: left;
+}
+
+ul.lang li a {
+  background-repeat: no-repeat;
+  background-position-y: center;
+  color: gray;
+}
+
 @media screen and (max-width : 760px) {
   .container {
     display: block;

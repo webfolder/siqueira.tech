@@ -24,18 +24,31 @@ collections:
   en:
     output: true
     permalink: /:collection/:slug
+  pt:
+    output: true
+    permalink: /:collection/:slug
 
 defaults:
 - scope:
     path: '_pages/en'
     type: "pages"
   values:
-    permalink: '/:slug'
+    permalink: /:slug
 - scope:
     path: "_posts/en"
     type: "posts"
   values:
-    permalink: '/:slug'
+    permalink: /:slug'
+- scope:
+    path: '_pages/pt'
+    type: 'pages'
+  values:
+    permalink: /pt/:slug
+- scope:
+    path: "_posts/pt"
+    type: "posts"
+  values:
+    permalink: /pt/:slug
 
 # Gems
 plugins:

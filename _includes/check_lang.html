@@ -1,0 +1,22 @@
+{%- comment -%}
+
+Check current lang and provide a proper set of pages based on that.
+
+Parameter:
+ - url: It is the base url used to build the final url
+
+{%- endcomment -%}
+
+{% if page.path contains '_posts' %}
+  {% assign pages = site.posts | where: "lang", lang.ref %}
+{% else %}
+  {% assign pages = site.pages | where: "lang", lang.ref %}
+{% endif %}
+
+{% if page.lang == "en" %}
+  {% assign p = pages | where: "lang", "pt" | first %}
+  {% assign lang_url = '/pt' | append: include.url %}
+{% else %}
+  {% assign p = pages | where: "lang", "en" | first %}
+  {% assign lang_url = include.url | remove: '/pt' %}
+{% endif %}

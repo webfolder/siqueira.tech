@@ -1,7 +1,11 @@
-{% for page in site.pages %}
+{% assign pages = site.pages | where:"lang", page.lang %}
+{% assign page_url = page.url %}
+
+{% for page in pages %}
   {% if page.categories contains 'sidebar' %}
     <div class="sidebar">
       {{ page.content | markdownify }}
+      {% include add_multilang.html url=page_url %}
     </div>
   {% endif %}
 {% endfor %}

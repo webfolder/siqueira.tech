@@ -1,0 +1,53 @@
+{%- comment -%}
+
+Add Multilanguage support
+
+If you want to use multilanguage, you have to add the following fields
+at the target file header. For example:
+
+---
+title: A cool title
+lang: en
+ref: acoolref
+layout: default
+---
+
+The ref parameter is responsible for group all related file with the specific
+language.
+
+Note: lang and ref are mandatory if you want to use multilanguage
+
+{%- endcomment -%}
+
+<ul class="lang">
+
+{% if page.path contains '_posts' %}
+  {% assign pages = site.posts | where: "ref", page.ref %}
+{% else %}
+  {% assign pages = site.pages | where: "ref", page.ref %}
+{% endif %}
+
+{% if page.lang == "en" %}
+  {% assign p = pages | where: "lang", "pt" | first %}
+  {% assign lang_url = '/pt' | append: include.url %}
+{% else %}
+  {% assign p = pages | where: "lang", "en" | first %}
+  {% assign lang_url = include.url %}
+{% endif %}
+
+<!--
+The Liquid filter "where" has changed its behaviour.
+Istead of returning nil or an empty array when the property doen't match any
+item, it returns the entire list of objects passed to the filter.
+Due to that, we need to double check the assigned page has the value
+we expect it to have.
+-->
+
+{% if p.ref == page.ref and p.lang != page.lang %}
+  <li>
+    <a href="{{ lang_url }}" class="{{ p.lang }}" >
+      {{site.data.languages[p.lang].label}}
+    </a>
+  </li>
+{% endif %}
+</ul>

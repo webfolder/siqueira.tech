@@ -1,5 +1,7 @@
 ---
 layout: home
+lang: en
+ref: index
 ---
 
 __Notice__: The opinions expressed on this site are mine alone and do not necessarily
