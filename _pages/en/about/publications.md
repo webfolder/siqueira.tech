@@ -2,6 +2,8 @@
 title: Publications
 layout: post
 permalink: /publications/
+lang: en
+ref: cv
 ---
 
 ## [FLOSS Project Management in Government-Academia Collaboration](https://link.springer.com/chapter/10.1007/978-3-319-92375-8_2)

@@ -2,6 +2,8 @@
 title: cv
 layout: post
 permalink: /cv/
+ref: cv
+lang: en
 ---
 
 ## Summary

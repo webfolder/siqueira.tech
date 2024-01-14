@@ -1,0 +1,11 @@
+{%- comment -%}
+
+Just create a filtered list
+
+{%- endcomment -%}
+
+{% assign posts = site.posts | where: "lang", lang.ref %}
+{% assign posts = posts | where:"lang", page.lang %}
+
+{% assign pages = site.pages | where: "lang", lang.ref %}
+{% assign pages = pages | where:"lang", page.lang %}

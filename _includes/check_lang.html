@@ -20,3 +20,5 @@ Parameter:
   {% assign p = pages | where: "lang", "en" | first %}
   {% assign lang_url = include.url | remove: '/pt' %}
 {% endif %}
+
+{% assign pages = pages | where:"lang", page.lang %}

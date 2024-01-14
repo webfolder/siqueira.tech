@@ -2,14 +2,17 @@
 layout: default
 ---
 
+{% include get_filtered_posts_and_pages.html %}
+
 <div class="content">
-{{ content }}
+
+  {{ content }}
 
   <div class="list-content-box">
     <h2>Recent Posts</h2>
     <hr>
       <ul class="posts-list">
-          {% for post in site.posts limit:3 %}
+          {% for post in posts limit:3 %}
             {% include post_list.html %}
           {% endfor %}
       </ul>

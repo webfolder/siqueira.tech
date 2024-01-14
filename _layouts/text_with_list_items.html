@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+{% include get_filtered_posts_and_pages.html %}
+
 <div>
   <div class="inner-post content">
     {{ content }}
@@ -12,7 +15,7 @@ layout: default
       {{ page.name }}
     {%- endcapture -%}
 
-    {%- for page in site.pages -%}
+    {%- for page in pages -%}
       {% if page.categories contains page_name %}
 
         {%- capture page_item_link -%}
