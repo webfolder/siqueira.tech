@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Sistemas Operacionais e o Kernel Linux</title>
+    <link rel="stylesheet" type="text/css" href="_static/revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="_static/revealjs4/dist/theme/white.css" type="text/css" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <!-- Slide -->
+<section>
+  <img width="800" height="520" src="_static/siqueira.png" style="background:none; border:none; box-shadow:none;">
+  <br>
+  <img width="120" height="41" src="_static/by.png" style="background:none; border:none; box-shadow:none;">
+</section><section >
+<h1>Sistemas Operacionais e o Kernel Linux</h1>
+<p>2023-05-22</p>
+</section>
+<section >
+<h2>Sobre</h2>
+<ul class="simple">
+<li><p>Engenheiro de Desenvolvimento de Software Sênior na AMD</p></li>
+<li><p>Engenheiro de Software e Mestre em Ciência da Computação</p></li>
+</ul>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/me.png"><img alt="_images/me.png" src="_images/me.png" style="width: 25%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section>
+<section >
+<h2>Discutindo Sistemas Operacionais</h2>
+</section>
+<section >
+<h3>O Sistema Operacional é como um biscoito recheado</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/biscoito-como-so.png"><img alt="_images/biscoito-como-so.png" src="_images/biscoito-como-so.png" style="width: 30%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>O Sistema Operacional é como um biscoito recheado</h3>
+<ul class="simple">
+<li><p>Esconde a complexidade do hardware</p></li>
+<li><p>Unifica a comunicação entre aplicação e hardware</p></li>
+<li><p>Remove a necessidade de saber otimizar para determinado dispositivo</p></li>
+<li><p>Separação entre User e Kernel space</p></li>
+<li><p>Fornece abstrações para o espaço do usuário</p></li>
+</ul>
+</section>
+</section>
+<section>
+<section >
+<h2>Exemplos de Sistemas Operacionais e suas Características</h2>
+</section>
+<section >
+<h3>Windows</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/Windows.png"><img alt="_images/Windows.png" src="_images/Windows.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>MacOS</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/macOS.png"><img alt="_images/macOS.png" src="_images/macOS.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>BSD</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/BSD.png"><img alt="_images/BSD.png" src="_images/BSD.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Distros Linux</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/tabela-periodica-distros.jpeg"><img alt="_images/tabela-periodica-distros.jpeg" src="_images/tabela-periodica-distros.jpeg" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>O Ecossistema Linux</h3>
+</section>
+<section >
+<h3>Vantagens</h3>
+<ul class="simple">
+<li><p>GPL v2 (BSD vs. GPL)</p></li>
+<li><p>Suporte para mais de 20 arquiteturas diferentes (e.g., x86, ARM, Risc-V, etc.)</p></li>
+<li><p>Amplamente testado (Diferentes ferramentas de CI)</p></li>
+<li><p>Comunidade entusiasmada</p></li>
+</ul>
+</section>
+<section >
+<h3>Desvantagens</h3>
+<ul class="simple">
+<li><p>Fragmentado</p></li>
+<li><p>Carece de soluções verticalmente integradas</p></li>
+</ul>
+</section>
+<section >
+<h3>Exemplos de produtos: Servidores</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/server.jpg"><img alt="_images/server.jpg" src="_images/server.jpg" style="width: 70%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Steam Deck</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/steamdeck.webp"><img alt="_images/steamdeck.webp" src="_images/steamdeck.webp" style="width: 60%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Android</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/android.png"><img alt="_images/android.png" src="_images/android.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Filmes</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/film.jpg"><img alt="_images/film.jpg" src="_images/film.jpg" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Marte</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/helicopter.png"><img alt="_images/helicopter.png" src="_images/helicopter.png" style="width: 80%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section >
+<h2>Linux: Visão Geral</h2>
+</section>
+<section data-background-image="_static/linux-puzzle.jpg" data-background-size="contain">
+<h3>O Linux é como um grande quebra-cabeça</h3>
+</section>
+<section >
+<h3>O Linux tem diversos subsistemas</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/all-subsystems.png"><img alt="_images/all-subsystems.png" src="_images/all-subsystems.png" style="width: 80%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>O Linux tem diversos contribuidores</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/contributions.png"><img alt="_images/contributions.png" src="_images/contributions.png" style="width: 80%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section >
+<h2>A Organização de Graphics</h2>
+</section>
+<section >
+<h3>Visão geral partindo do subsistema de gráficos</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/Linux_AMD_graphics_stack.png"><img alt="_images/Linux_AMD_graphics_stack.png" src="_images/Linux_AMD_graphics_stack.png" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Separação entre Mecânismo e Política</h3>
+<p>O mecanismo não deve se misturar com as políticas nas quais decisões são
+tomadas.</p>
+</section>
+<section >
+<h3>Exemplos: Syscall</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/syscalls.png"><img alt="_images/syscalls.png" src="_images/syscalls.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos: IOCTL</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/IOCTL-drm.png"><img alt="_images/IOCTL-drm.png" src="_images/IOCTL-drm.png" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Schedulers</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/drm-overview.png"><img alt="_images/drm-overview.png" src="_images/drm-overview.png" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Paralelismo</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/true-paralelismo.png"><img alt="_images/true-paralelismo.png" src="_images/true-paralelismo.png" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section >
+<h2>Obrigado</h2>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="_static/revealjs4/dist/reveal.js"></script>
+    
+    
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, JSON.parse('null'));
+        
+        
+        
+          revealjsConfig.plugins = [
+            
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>

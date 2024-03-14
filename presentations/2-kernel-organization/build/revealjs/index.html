@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Sistemas Operacionais e o Kernel Linux</title>
+    <link rel="stylesheet" type="text/css" href="_static/revealjs4/dist/reveal.css?v=962a8481" />
+    <link rel="stylesheet" href="_static/revealjs4/dist/theme/white.css" type="text/css" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <!-- Slide -->
+<section>
+  <img width="800" height="520" src="_static/siqueira.png" style="background:none; border:none; box-shadow:none;">
+  <br>
+  <img width="120" height="41" src="_static/by.png" style="background:none; border:none; box-shadow:none;">
+</section><section >
+<h1>Sistemas Operacionais e o Kernel Linux</h1>
+<p>2023-05-22</p>
+</section>
+<section >
+<h2>Sobre</h2>
+<ul class="simple">
+<li><p>Engenheiro de Desenvolvimento de Software Sênior na AMD</p></li>
+<li><p>Engenheiro de Software e Mestre em Ciência da Computação</p></li>
+</ul>
+</section>
+<section>
+<section >
+<h2>Discutindo Sistemas Operacionais</h2>
+</section>
+<section >
+<h3>O Sistema Operacional é como um biscoito recheado</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/biscoito-como-so.png"><img alt="_images/biscoito-como-so.png" src="_images/biscoito-como-so.png" style="width: 30%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>O Sistema Operacional é como um biscoito recheado</h3>
+<ul class="simple">
+<li><p>Esconde a complexidade do hardware</p></li>
+<li><p>Unifica a comunicação entre aplicação e hardware</p></li>
+<li><p>Separação entre User e Kernel space</p></li>
+<li><p>Remove a necessidade da aplicação saber como otimizar para determinado dispositivo</p></li>
+<li><p>Fornece abstrações para o espaço do usuário</p></li>
+</ul>
+</section>
+</section>
+<section>
+<section >
+<h2>Exemplos de Sistemas Operacionais e suas Características</h2>
+</section>
+<section >
+<h3>Windows</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/Windows.png"><img alt="_images/Windows.png" src="_images/Windows.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>MacOS</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/macOS.png"><img alt="_images/macOS.png" src="_images/macOS.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>BSD</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/BSD.png"><img alt="_images/BSD.png" src="_images/BSD.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Distros Linux</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/tabela-periodica-distros.jpeg"><img alt="_images/tabela-periodica-distros.jpeg" src="_images/tabela-periodica-distros.jpeg" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>O Ecossistema Linux</h3>
+</section>
+<section >
+<h3>Vantagens</h3>
+<ul class="simple">
+<li><p>GPL v2 (BSD vs. GPL)</p></li>
+<li><p>Suporte para mais de 20 arquiteturas diferentes (e.g., x86, ARM, Risc-V, etc.)</p></li>
+<li><p>Amplamente testado (Diferentes ferramentas de CI)</p></li>
+<li><p>Comunidade entusiasmada</p></li>
+</ul>
+</section>
+<section >
+<h3>Desvantagens</h3>
+<ul class="simple">
+<li><p>Fragmentado</p></li>
+<li><p>Carece de soluções verticalmente integradas</p></li>
+</ul>
+</section>
+<section >
+<h3>Exemplos de produtos: Servidores</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/server.jpg"><img alt="_images/server.jpg" src="_images/server.jpg" style="width: 70%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Steam Deck</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/steamdeck.webp"><img alt="_images/steamdeck.webp" src="_images/steamdeck.webp" style="width: 60%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Android</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/android.png"><img alt="_images/android.png" src="_images/android.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Filmes</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/film.jpg"><img alt="_images/film.jpg" src="_images/film.jpg" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Exemplos de produtos: Sistemas embarcados</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/helicopter.png"><img alt="_images/helicopter.png" src="_images/helicopter.png" style="width: 80%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section >
+<h2>Linux: Visão Geral</h2>
+</section>
+<section data-background-image="_static/linux-puzzle.jpg" data-background-size="contain">
+<h3>O Linux é como um grande quebra-cabeça</h3>
+</section>
+<section >
+<h3>O Linux tem diversos subsistemas</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/all-subsystems.png"><img alt="_images/all-subsystems.png" src="_images/all-subsystems.png" style="width: 80%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>O Linux tem diversos contribuidores</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/contributions.png"><img alt="_images/contributions.png" src="_images/contributions.png" style="width: 80%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section >
+<h2>Do subsistema para a distro</h2>
+</section>
+<section >
+<h3>Do repositório para o kernel estável</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/from_repo_to_stable.png"><img alt="_images/from_repo_to_stable.png" src="_images/from_repo_to_stable.png" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section >
+<h3>Do repositório para o kernel estável</h3>
+<ul class="simple">
+<li><p>amdgpu</p></li>
+<li><p>drm</p></li>
+<li><p>Torvalds</p></li>
+<li><p>Stable</p></li>
+</ul>
+</section>
+<section >
+<h3>Stable release Vs. Rolling release</h3>
+<div class="flex docutils container">
+<div class="half docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/Debian-vs-Arch.jpg"><img alt="_images/Debian-vs-Arch.jpg" src="_images/Debian-vs-Arch.jpg" style="width: 40%;" /></a>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section >
+<h2>Como contribuir</h2>
+</section>
+<section >
+<h3>Ler a documentação</h3>
+<p>Independente do que seja dito nessa apresentação, sempre leia a documentação!</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kernel.org/doc/html/latest/process/submitting-patches.html">https://www.kernel.org/doc/html/latest/process/submitting-patches.html</a></p></li>
+</ul>
+</section>
+<section >
+<h3>Passos básicos: escolha o que fazer</h3>
+<ul class="simple">
+<li><p>Comece com algo simples. Sugestão: Procure por TODOs.
+- <a class="reference external" href="https://docs.kernel.org/next/gpu/amdgpu/display/display-contributing.html">https://docs.kernel.org/next/gpu/amdgpu/display/display-contributing.html</a></p></li>
+<li><p>Se inscreva na lista de email do projeto.
+- <a class="reference external" href="https://flusp.ime.usp.br/others/Mailing-list-subscription/">https://flusp.ime.usp.br/others/Mailing-list-subscription/</a></p></li>
+<li><p>Certifique-se de que o seu patch segue as boas práticas.
+- <cite>kw codestyle</cite></p></li>
+</ul>
+</section>
+<section >
+<h3>Passos básicos: envie a sua contribuição</h3>
+<ul class="simple">
+<li><p>Identifique quem deve receber os seu patch.
+- kw maintainers</p></li>
+<li><p>Tenha paciência, as revisões podem demorar.</p></li>
+<li><p>Se você não ouvir nenhum feedback em 3 semanas, tente mandar uma versão nova
+do patch.</p></li>
+</ul>
+</section>
+</section>
+<section>
+<section >
+<h2>Ganhando moral na quebrada: o que não está escrito</h2>
+</section>
+<section >
+<h3>Respeito é pra quem tem</h3>
+<ul class="simple">
+<li><p>Evite atitudes rudes.</p></li>
+<li><p>Tente atender a todos os comentários dos revisores.</p></li>
+<li><p>Evite entrar em discussões inúteis e off-topic.</p></li>
+</ul>
+</section>
+<section >
+<h3>Respeito é pra quem tem</h3>
+<ul class="simple">
+<li><p>Sempre mantenha as pessoas que comentaram no seu patch com Cc/To nas novas versões do seu patch.</p></li>
+<li><p>Sempre mantenha as pessoas que comentaram no seu patch com Cc/To nas novas versões do seu patch.</p></li>
+<li><p>A César o que é de César… É sempre bom dar créditos! Co-developed-by, Suggested-by, etc</p></li>
+</ul>
+</section>
+<section >
+<h3>Firmão, deixa eu ir, quem não é visto, não é lembrado</h3>
+<ul class="simple">
+<li><p>Mantenha um fluxo constante de contribuições.</p></li>
+<li><p>Sempre que possível, faça revisões.</p></li>
+<li><p>Crie seu site e escreva. Considere escrever tutoriais para o FLUSP.</p></li>
+<li><p>Tente fazer o seu site virar parte de algum planet.</p></li>
+<li><p>Aplique para o GSoC e Outreachy.</p></li>
+<li><p>Apresente o seu trabalho.</p></li>
+</ul>
+</section>
+</section>
+<section >
+<h2>Obrigado</h2>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="_static/revealjs4/dist/reveal.js"></script>
+    
+    
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, JSON.parse('null'));
+        
+        
+        
+          revealjsConfig.plugins = [
+            
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>
