@@ -1,6 +1,4 @@
-{% assign page_url = page.url %}
-
-{% include check_lang.html url=page_url %}
+{% include check_lang.html url = page.url %}
 
 {% for page in pages %}
   {% if page.categories contains 'sidebar' %}
@@ -10,8 +8,8 @@
       <!-- Control lang option -->
       <ul class="lang">
         <li>
-          <a href="{{ lang_url }}" class="{{ p.lang }}" >
-            {{site.data.languages[p.lang].label}}
+          <a href="{{ lang_url }}" class="{{ change_lang_to }}" >
+            {{site.data.languages[change_lang_to].label}}
           </a>
         </li>
       </ul>

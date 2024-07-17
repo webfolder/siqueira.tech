@@ -1,24 +1,33 @@
 {%- comment -%}
 
-Check current lang and provide a proper set of pages based on that.
+Check current lang and provide an array named pages with all of the pages.
+
+Note:
+Sidebar is part of the site.pages, and for this reason must be included as part
+of the poge array when it is in post page.
 
 Parameter:
- - url: It is the base url used to build the final url
+ - url: It is the base url used to build the specific url
 
+Return:
+ - pages: An array with the filtered pages
+ - lang_url: URL with the lang substring (e.g., /pt)
 {%- endcomment -%}
 
-{% if page.path contains '_posts' %}
-  {% assign pages = site.posts | where: "lang", lang.ref %}
+{% if page.path contains "_posts" %}
+  {% assign posts = site.posts | where: "lang", page.lang %}
+  {% assign sidebar = site.pages | where: "ref", "sidebar" %}
+  {% assign pages = posts | concat: sidebar %}
 {% else %}
-  {% assign pages = site.pages | where: "lang", lang.ref %}
+  {% assign pages = site.pages | where: "lang", page.lang %}
 {% endif %}
 
 {% if page.lang == "en" %}
-  {% assign p = pages | where: "lang", "pt" | first %}
-  {% assign lang_url = '/pt' | append: include.url %}
+  {% assign change_lang_to = "pt" %}
+  {% assign lang_url = "/pt" | append: include.url %}
 {% else %}
-  {% assign p = pages | where: "lang", "en" | first %}
-  {% assign lang_url = include.url | remove: '/pt' %}
+  {% assign change_lang_to = "en" %}
+  {% assign lang_url = include.url | remove: "/pt" %}
 {% endif %}
 
 {% assign pages = pages | where:"lang", page.lang %}
