@@ -30,7 +30,7 @@ collections:
 
 defaults:
 - scope:
-    path: '_pages/en'
+    path: "_pages/en"
     type: "pages"
   values:
     permalink: /:slug
@@ -38,10 +38,10 @@ defaults:
     path: "_posts/en"
     type: "posts"
   values:
-    permalink: /:slug'
+    permalink: /:slug
 - scope:
-    path: '_pages/pt'
-    type: 'pages'
+    path: "_pages/pt"
+    type: "pages"
   values:
     permalink: /pt/:slug
 - scope:
