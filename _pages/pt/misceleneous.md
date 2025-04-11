@@ -1,7 +1,7 @@
 ---
 title: Misceleneous
 layout: misceleneous
-permalink: /misceleneous/
+permalink: /pt/misceleneous/
 lang: pt
 ref: misceleneous
 ---

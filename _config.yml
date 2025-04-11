@@ -49,6 +49,12 @@ defaults:
     type: "posts"
   values:
     permalink: /pt/:slug
+- scope:
+    path: "pt"
+    type: "posts"
+  values:
+    permalink: /pt/:slug
+
 
 # Gems
 plugins:
