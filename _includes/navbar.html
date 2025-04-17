@@ -1,3 +1,33 @@
+{% assign home_link = site.url %}
+
+{% assign status_update_label = "Updates" %}
+{% assign status_update_link = site.url | append: "/status_update" %}
+
+{% assign misceleneous_label = "Miscellaneous" %}
+{% assign misceleneous_link = site.url | append: "/misceleneous" %}
+
+{% assign tutorial_label = "Tutorials" %}
+{% assign tutorial_link = site.url | append: "/tutorials" %}
+
+{% assign about_label = "About" %}
+{% assign about_link = site.url | append: "/about" %}
+
+{% if page.lang == "pt" %}
+  {% assign home_link = site.url | append: "/pt" %}
+
+  {% assign status_update_label = "Atualizações" %}
+  {% assign status_update_link = site.url | append: "/pt/status_update" %}
+
+  {% assign misceleneous_label = "Outros" %}
+  {% assign misceleneous_link = site.url | append: "/pt/misceleneous" %}
+
+  {% assign tutorial_label = "Tutoriais" %}
+  {% assign tutorial_link = site.url | append: "/pt/tutorials" %}
+
+  {% assign about_label = "Sobre" %}
+  {% assign about_link = site.url | append: "/pt/about" %}
+{% endif %}
+
 <header class="header">
   <nav>
     <a class="logo" href="{{ site.url }}"><img src="{{ site.url }}/images/{{ site.logo }}"></a>
@@ -5,11 +35,11 @@
     <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
 
     <ul class="menu">
-      <li><a href="{{ site.url }}/status_update">Status Update</a></li>
-      <li><a href="{{ site.url }}/misceleneous">Misceleneous</a></li>
-      <li><a id="home_logo" href="{{ site.url }}"><img src="{{ site.url }}/images/{{ site.logo }}"></a></li>
-      <li><a href="{{ site.url }}/tutorials">Tutorials</a></li>
-      <li><a href="{{ site.url }}/about">About</a></li>
+      <li><a href="{{ status_update_link }}">{{ status_update_label }}</a></li>
+      <li><a href="{{ misceleneous_link }}">{{ misceleneous_label }}</a></li>
+      <li><a id="home_logo" href="{{ home_link }}"><img src="{{ site.url }}/images/{{ site.logo }}"></a></li>
+      <li><a href="{{ tutorial_link }}">{{ tutorial_label }}</a></li>
+      <li><a href="{{ about_link }}">{{ about_label }}</a></li>
     </ul>
   </nav>
 </header>

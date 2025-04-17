@@ -1,5 +1,5 @@
 ---
-title: Tutorials
+title: Tutoriais
 layout: list_items
 description: "Tutorials"
 permalink: /pt/tutorials/
