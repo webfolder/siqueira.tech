@@ -2,7 +2,7 @@
 layout: post
 title:  "Adicionar infraestrutura para eventos Vblank e page flip em vkms simulados pelo hrtimer"
 date:   2018-07-16
-categories: [pt-misceleneous, pt-freedesktop]
+categories: [misceleneous, freedesktop, feed-pt]
 published: true
 lang: pt
 ---

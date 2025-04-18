@@ -2,7 +2,7 @@
 layout: post
 title: "Status Update and XDC 2019, October 2019"
 date: 2019-11-10
-categories: [status_update, freedesktop]
+categories: [status_update, freedesktop, feed-freedesktop, feed]
 published: true
 lang: en
 ---

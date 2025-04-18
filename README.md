@@ -55,7 +55,6 @@ is, it is the general feed of the site.
 The *feed-freedesktop.xml* file filters posts by the "freedesktop" category and
 creates a feed with only posts that have that category.
 
-
 ### How to add a post to freedesktop feed
 
 To add a post to the freedesktop feed, simply include the "freedesktop"

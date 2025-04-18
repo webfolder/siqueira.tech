@@ -2,7 +2,7 @@
 layout: post
 title:  "An attempt to create a local Kernel community"
 date:   2018-11-19
-categories: [pt-misceleneous, pt-freedesktop]
+categories: [misceleneous, freedesktop, feed-pt]
 published: true
 lang: pt
 ---

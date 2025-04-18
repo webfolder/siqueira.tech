@@ -2,7 +2,7 @@
 layout: post
 title:  "Talk about VKMS accepted in linuxdev-br"
 date:   2018-07-25
-categories: [misceleneous, freedesktop]
+categories: [misceleneous, freedesktop,  feed-freedesktop, feed]
 published: true
 lang: en
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Status Update, Junho 2019"
 date:   2019-07-09
-categories: [pt-status_update, pt-freedesktop]
+categories: [status_update, freedesktop, feed-pt]
 published: true
 lang: pt
 ---

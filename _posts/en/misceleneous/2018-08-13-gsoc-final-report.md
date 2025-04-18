@@ -2,7 +2,7 @@
 layout: post
 title:  "GSoC Final Report"
 date:   2018-08-13
-categories: [misceleneous, freedesktop]
+categories: [misceleneous, freedesktop,  feed-freedesktop, feed]
 published: true
 lang: en
 ---

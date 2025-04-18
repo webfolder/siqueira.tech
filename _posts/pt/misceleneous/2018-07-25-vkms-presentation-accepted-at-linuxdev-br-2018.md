@@ -2,7 +2,7 @@
 layout: post
 title:  "Palestra sobre VKMS aceita para linuxdev-br"
 date:   2018-07-25
-categories: [pt-misceleneous, pt-freedesktop]
+categories: [misceleneous, freedesktop, feed-pt]
 published: true
 lang: pt
 ---
