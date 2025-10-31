@@ -2,7 +2,11 @@
 Prints the whole bibliography.
 {%- endcomment -%}
 
+{% if page.lang == "pt" %}
+## Referências
+{% else %}
 ## References
+{% endif %}
 
 {%- assign _bib_n = _bib_ids | size | minus: 1 -%}
 {% for i in (0.._bib_n) %}

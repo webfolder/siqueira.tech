@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "An attempt to create a local Kernel community"
+title:  "Uma tentativa de tentar criar uma comunidade local de kernel"
 date:   2018-11-19
 categories: [misceleneous, freedesktop, feed-pt]
 published: true

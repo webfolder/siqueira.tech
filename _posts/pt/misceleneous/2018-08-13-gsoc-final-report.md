@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GSoC Final Report"
+title:  "Relatório final do GSoC"
 date:   2018-08-13
 categories: [misceleneous, freedesktop, feed-pt]
 published: true
