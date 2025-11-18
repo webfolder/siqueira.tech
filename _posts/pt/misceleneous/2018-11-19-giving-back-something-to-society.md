@@ -5,6 +5,7 @@ date:   2018-11-19
 categories: [misceleneous, freedesktop, feed-pt]
 published: true
 lang: pt
+permalink: /pt/2018-11-19-giving-back-something-to-society/
 ---
 
 Desde o dia em que tive minha primeira aula de Sistemas Operacionais (SO) no

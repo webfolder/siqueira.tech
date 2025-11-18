@@ -5,6 +5,7 @@ date:   2019-07-09
 categories: [status_update, freedesktop, feed-freedesktop, feed]
 published: true
 lang: en
+permalink: /2019-07-06-status-update-june-2019/
 ---
 
 {% include add_ref.html id="crcproblemFirst"

@@ -5,6 +5,7 @@ date:   2018-07-16
 categories: [misceleneous, freedesktop, feed-pt]
 published: true
 lang: pt
+permalink: /pt/2018-07-16-add-infrastructure-for-vblank-and-page-flip-events-simulated-via-hrtimer-in-vkms/
 ---
 
 {% include add_ref.html id="drmmisc"

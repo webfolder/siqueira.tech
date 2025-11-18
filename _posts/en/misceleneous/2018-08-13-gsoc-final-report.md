@@ -5,6 +5,7 @@ date:   2018-08-13
 categories: [misceleneous, freedesktop,  feed-freedesktop, feed]
 published: true
 lang: en
+permalink: /2018-08-13-gsoc-final-report/
 ---
 
 Nothing lasts forever, and this also applies for GSoC projects. In this report,

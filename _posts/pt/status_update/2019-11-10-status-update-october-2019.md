@@ -5,6 +5,7 @@ date: 2019-11-10
 categories: [status_update, freedesktop, feed-pt]
 published: true
 lang: pt
+permalink: /pt/2019-11-10-status-update-october-2019/
 ---
 
 {% include add_ref.html id="xdcsite"

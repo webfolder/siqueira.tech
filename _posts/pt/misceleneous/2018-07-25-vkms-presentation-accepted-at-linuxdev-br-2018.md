@@ -5,6 +5,7 @@ date:   2018-07-25
 categories: [misceleneous, freedesktop, feed-pt]
 published: true
 lang: pt
+permalink: /pt/2018-07-25-vkms-presentation-accepted-at-linuxdev-br-2018/
 ---
 
 {% include image-post.html

@@ -5,6 +5,7 @@ date:   2018-11-19
 categories: [misceleneous, freedesktop,  feed-freedesktop, feed]
 published: true
 lang: en
+permalink: /2018-11-19-giving-back-something-to-society/
 ---
 
 Since the day I had my first class of Operating Systems (OS) in my engineering

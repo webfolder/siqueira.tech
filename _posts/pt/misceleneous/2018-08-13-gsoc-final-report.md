@@ -5,6 +5,7 @@ date:   2018-08-13
 categories: [misceleneous, freedesktop, feed-pt]
 published: true
 lang: pt
+permalink: /pt/2018-08-13-gsoc-final-report/
 ---
 
 Nada dura para sempre, e isso também se aplica a projetos GSoC. Neste relatório,
