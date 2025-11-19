@@ -3,4 +3,3 @@ _site
 .jekyll-metadata
 .pdf
 Gemfile.lock
-_includes/openring_template_out.html
