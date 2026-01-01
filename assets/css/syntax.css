@@ -10,6 +10,15 @@ div.highlighter-rouge, figure.highlight {
   display: block;
 }
 
+code.highlighter-rouge {
+  background-color: rgba(148, 148, 148, 0.12);
+  color: #3f3f3f;
+  border-radius: 2px;
+  font-weight: bold;
+  margin: 0 0.1em;
+  padding: 0.1em 0.1em;
+}
+
 pre.highlight {
   padding-left: 0.5rem;
 }
